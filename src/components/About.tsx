@@ -90,13 +90,16 @@ const About = () => {
               />
             </div>
 
-            <h1 className="text-xl font-bold mb-2">
-              I'm Jayce Il and I'm a{" "}
-              <span className="text-orange-500 inline-block min-w-[200px]">
-                {profession}
-                <span className="animate-pulse">|</span>
-              </span>
-            </h1>
+            <div className="text-left">
+              <h1 className="text-xl font-bold mb-2">
+                I'm Jayce Il and I'm a{" "}
+                <span className="text-orange-500 inline-block min-w-[200px]">
+                  {profession}
+                  <span className="animate-pulse">|</span>
+                </span>
+              </h1>
+            </div>
+            
             <p className="text-gray-700 mb-8 max-w-3xl mx-auto">
               Hi! My name is <span className="text-orange-500">Jayce Il</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
             </p>
@@ -138,7 +141,7 @@ const About = () => {
                     </span>
                     <span className="font-bold">{skill.percentage}%</span>
                   </div>
-                  <Progress value={skill.percentage} className="h-3" />
+                  <Progress value={skill.percentage} className="h-3 bg-gray-200" indicatorClassName="bg-orange-500" />
                 </div>
               ))}
             </div>
