@@ -1,8 +1,35 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { useState, FormEvent } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const mailtoLink = `mailto:josephbundok@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage: ${formData.message}`
+    )}`;
+    window.location.href = mailtoLink;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -28,7 +55,8 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Contact Info - Left side on desktop, Top on mobile */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -57,6 +85,66 @@ const Contact = () => {
                 <p className="text-gray-600">New York City, USA</p>
               </div>
             </div>
+          </motion.div>
+
+          {/* Contact Form - Right side on desktop, Bottom on mobile */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <Input
+                  type="text"
+                  placeholder="Your Name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full border-gray-300 focus:border-orange-500 focus:ring-orange-500"
+                />
+              </div>
+              <div>
+                <Input
+                  type="email"
+                  placeholder="Your Email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full border-gray-300 focus:border-orange-500 focus:ring-orange-500"
+                />
+              </div>
+              <div>
+                <Input
+                  type="text"
+                  placeholder="Subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full border-gray-300 focus:border-orange-500 focus:ring-orange-500"
+                />
+              </div>
+              <div>
+                <Textarea
+                  placeholder="Your Message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full min-h-[150px] border-gray-300 focus:border-orange-500 focus:ring-orange-500"
+                />
+              </div>
+              <Button 
+                type="submit"
+                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3"
+              >
+                Send Message
+              </Button>
+            </form>
           </motion.div>
         </div>
       </div>
