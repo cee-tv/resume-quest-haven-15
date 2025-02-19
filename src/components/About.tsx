@@ -125,89 +125,24 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-6xl mx-auto"
+          className="max-w-4xl mx-auto space-y-20"
         >
-          <div className="flex items-center mb-12">
-            <motion.div
-              initial={{ height: 0 }}
-              whileInView={{ height: "120px" }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="w-2 bg-orange-500 mr-6"
-            ></motion.div>
-            <div className="text-left">
-              <h1 className="text-2xl font-bold mb-2">ABOUT ME</h1>
-              <h2 className="text-lg text-gray-600">Main informations about me</h2>
-            </div>
-          </div>
-
-          {/* Desktop Layout */}
-          <div className="hidden md:grid md:grid-cols-2 gap-12">
-            {/* Left Column - Image */}
-            <div>
-              <div className="relative w-full aspect-[4/5] overflow-hidden border-4 border-orange-500 rounded-lg">
-                <img 
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjZGKkR6-BO2HXVSbR26NGbhf5_Fyr3q2pvw&usqp=CAU"
-                  alt="Jayce Il"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Right Column - Personal Information */}
-            <div className="space-y-8">
+          <div className="text-center">
+            <div className="flex items-center mb-4">
+              <motion.div
+                initial={{ height: 0 }}
+                whileInView={{ height: "120px" }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="w-2 bg-orange-500 mr-6"
+              ></motion.div>
               <div className="text-left">
-                <div className="mb-6">
-                  <span className="text-2xl font-bold">I'm Jayce Il and I'm a </span>
-                  <span className="text-orange-500 inline-block min-w-[200px] text-2xl">
-                    {profession}
-                    <span className="animate-pulse">|</span>
-                  </span>
-                </div>
-
-                <p className="text-gray-700 mb-8">
-                  Hi! My name is <span className="text-orange-500">Jayce Il</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
-                </p>
-
-                <div className="grid grid-cols-2 gap-6">
-                  {personalInfo.map((info, index) => (
-                    <div key={index} className="flex flex-col space-y-1">
-                      <span className="font-bold text-gray-800">{info.label}</span>
-                      <span className="text-gray-600">{info.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex gap-4 mt-8">
-                <Button 
-                  variant="default"
-                  className="bg-orange-500 hover:bg-orange-600"
-                  onClick={handleFacebookMessage}
-                >
-                  Send Message
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="border-orange-500 text-orange-500 hover:bg-orange-50"
-                  onClick={handleEmail}
-                >
-                  Download CV
-                </Button>
+                <h1 className="text-2xl font-bold mb-2">ABOUT ME</h1>
+                <h2 className="text-lg text-gray-600">Main informations about me</h2>
               </div>
             </div>
-          </div>
 
-          {/* Mobile Layout */}
-          <div className="block md:hidden">
-            <div className="p-8 bg-gray-50 rounded-lg mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
-              <p className="text-gray-700 text-left">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
-              </p>
-            </div>
-
-            <div className="w-full aspect-[4/5] overflow-hidden border-4 border-orange-500">
+            <div className="w-144 h-144 mx-auto mb-8 overflow-hidden border-4 border-orange-500">
               <img 
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjZGKkR6-BO2HXVSbR26NGbhf5_Fyr3q2pvw&usqp=CAU"
                 alt="Jayce Il"
@@ -215,121 +150,63 @@ const About = () => {
               />
             </div>
 
-            <div className="text-left mt-8">
-              <div className="mb-6">
-                <span className="text-xl font-bold">I'm Jayce Il and I'm a </span>
-                <span className="text-orange-500 inline-block min-w-[200px]">
-                  {profession}
-                  <span className="animate-pulse">|</span>
-                </span>
-              </div>
-
-              <p className="text-gray-700">
-                Hi! My name is <span className="text-orange-500">Jayce Il</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
-              </p>
-
-              <div className="grid grid-cols-2 gap-x-8 gap-y-4 mt-8">
-                {personalInfo.map((info, index) => (
-                  <div key={index} className="flex flex-col">
-                    <span className="font-bold">{info.label}</span>
-                    <span className="text-gray-600">{info.value}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex gap-4 mt-8">
-                <Button 
-                  variant="default"
-                  className="bg-orange-500 hover:bg-orange-600"
-                  onClick={handleFacebookMessage}
-                >
-                  Send Message
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="border-orange-500 text-orange-500 hover:bg-orange-50"
-                  onClick={handleEmail}
-                >
-                  Download CV
-                </Button>
-              </div>
+            <div className="text-left mb-2">
+              <span className="text-xl font-bold">I'm Jayce Il and I'm a </span>
+              <span className="text-orange-500 inline-block min-w-[200px]">
+                {profession}
+                <span className="animate-pulse">|</span>
+              </span>
             </div>
-          </div>
 
-          {/* Desktop Layout Section */}
-          <div className="hidden md:block mt-20">
-            <div className="p-8 bg-gray-50 rounded-lg mb-12">
+            <p className="text-gray-700 mb-8 text-left">
+              Hi! My name is <span className="text-orange-500">Jayce Il</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
+            </p>
+
+            <div className="grid grid-cols-2 gap-x-8 gap-y-4 text-left max-w-2xl mx-auto mb-8">
+              {personalInfo.map((info, index) => (
+                <div key={index} className="flex flex-col">
+                  <span className="font-bold">{info.label}</span>
+                  <span className="text-gray-600">{info.value}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12">
               <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
-              <p className="text-gray-700 text-left">
+              <p className="text-gray-700 mb-8 text-left">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
               </p>
-            </div>
-
-            <div className="space-y-8">
-              {skills.map((skill, index) => (
-                <motion.div 
-                  key={index} 
-                  className="text-left"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <span className="font-bold">{skill.name}</span>
-                      <span className="text-gray-600">- {skill.years} years of experience</span>
+              <div className="space-y-8">
+                {skills.map((skill, index) => (
+                  <motion.div 
+                    key={index} 
+                    className="text-left"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold">{skill.name}</span>
+                        <span className="text-gray-600">- {skill.years} years of experience</span>
+                      </div>
+                      <motion.span 
+                        className="text-orange-500 font-bold"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1 }}
+                      >
+                        {skillPercentages[skill.name]}%
+                      </motion.span>
                     </div>
-                    <motion.span 
-                      className="text-orange-500 font-bold"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 1 }}
-                    >
-                      {skillPercentages[skill.name]}%
-                    </motion.span>
-                  </div>
-                  <Progress 
-                    value={skillPercentages[skill.name]} 
-                    className="h-2 transition-all duration-500 ease-out"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile Layout Skills Section */}
-          <div className="block md:hidden mt-8">
-            <div className="space-y-8">
-              {skills.map((skill, index) => (
-                <motion.div 
-                  key={index} 
-                  className="text-left"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <span className="font-bold">{skill.name}</span>
-                      <span className="text-gray-600">- {skill.years} years of experience</span>
-                    </div>
-                    <motion.span 
-                      className="text-orange-500 font-bold"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 1 }}
-                    >
-                      {skillPercentages[skill.name]}%
-                    </motion.span>
-                  </div>
-                  <Progress 
-                    value={skillPercentages[skill.name]} 
-                    className="h-2 transition-all duration-500 ease-out"
-                  />
-                </motion.div>
-              ))}
+                    <Progress 
+                      value={skillPercentages[skill.name]} 
+                      className="h-2 transition-all duration-500 ease-out"
+                    />
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>
