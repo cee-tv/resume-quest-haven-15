@@ -123,29 +123,29 @@ const About = () => {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-4 justify-center mt-8">
+            <div className="flex flex-wrap gap-6 justify-center mt-8">
               <Button
                 onClick={handleFacebookMessage}
-                className="bg-orange-500 hover:bg-orange-600 text-white min-w-[200px] h-12 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
+                className="bg-orange-500 w-14 h-14 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 hover:bg-blue-600 hover:shadow-lg active:shadow-inner flex items-center justify-center p-0"
+                title="Message on Facebook"
               >
-                <MessageCircle className="w-5 h-5" />
-                Message on Facebook
+                <MessageCircle className="w-6 h-6 text-white" />
               </Button>
               
               <Button
                 onClick={handleEmail}
-                className="bg-orange-500 hover:bg-orange-600 text-white min-w-[200px] h-12 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
+                className="bg-orange-500 w-14 h-14 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 hover:bg-red-500 hover:shadow-lg active:shadow-inner flex items-center justify-center p-0"
+                title="Email Me"
               >
-                <Mail className="w-5 h-5" />
-                Email Me
+                <Mail className="w-6 h-6 text-white" />
               </Button>
               
               <Button
                 onClick={handleSMS}
-                className="bg-orange-500 hover:bg-orange-600 text-white min-w-[200px] h-12 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
+                className="bg-orange-500 w-14 h-14 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 hover:bg-green-500 hover:shadow-lg active:shadow-inner flex items-center justify-center p-0"
+                title="Send SMS"
               >
-                <MessageSquare className="w-5 h-5" />
-                Send SMS
+                <MessageSquare className="w-6 h-6 text-white" />
               </Button>
             </div>
           </div>
