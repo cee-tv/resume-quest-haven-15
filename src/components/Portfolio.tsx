@@ -35,7 +35,7 @@ const Portfolio = () => {
         >
           <h2 className="text-4xl font-display font-bold mb-4">Portfolio</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and expertise.
+            Check out our latest creative works
           </p>
         </motion.div>
 

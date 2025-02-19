@@ -28,7 +28,7 @@ const Contact = () => {
         >
           <h2 className="text-4xl font-display font-bold mb-4">Contact Me</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Feel free to reach out to me for any inquiries or collaboration opportunities.
+            Get in touch with me
           </p>
         </motion.div>
 
