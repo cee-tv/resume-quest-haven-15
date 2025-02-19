@@ -97,7 +97,7 @@ const Hero = () => {
   const [profession, setProfession] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
-  const professions = ["  Social Media Boosting", "  Social Media Seller"]; // Added two spaces at the start
+  const professions = ["Social Media Boosting", "Social Media Seller"];
   const period = 2000;
   const [delta, setDelta] = useState(200);
 
@@ -184,7 +184,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-2xl md:text-4xl text-white/90 mb-8 font-display pl-12 md:pl-0"
+            className="text-2xl md:text-4xl text-white/90 mb-8 font-display pl-12 md:pl-0 flex items-center justify-center gap-2"
           >
             <span className="inline-block">I'm a</span>
             <span className="font-bold text-white inline-block min-w-[300px] text-left">
