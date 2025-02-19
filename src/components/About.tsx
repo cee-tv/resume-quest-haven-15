@@ -101,7 +101,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="w-48 h-48 mx-auto mb-8 overflow-hidden rounded-full border-4 border-orange-500">
+            <div className="w-48 h-48 mx-auto mb-8 overflow-hidden border-4 border-orange-500">
               <img 
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjZGKkR6-BO2HXVSbR26NGbhf5_Fyr3q2pvw&usqp=CAU"
                 alt="Jayce Il"
