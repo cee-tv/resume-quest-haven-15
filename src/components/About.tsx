@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -127,97 +126,6 @@ const About = () => {
                   <span className="font-bold">{info.label}</span>
                   <span className="text-gray-600">{info.value}</span>
                 </div>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-6 justify-center mt-8">
-              <Button
-                onClick={handleFacebookMessage}
-                className="bg-orange-500 w-14 h-14 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 hover:bg-blue-600 hover:shadow-lg active:shadow-inner flex items-center justify-center p-0"
-                title="Message on Facebook"
-              >
-                <MessageCircle className="w-6 h-6 text-white" />
-              </Button>
-              
-              <Button
-                onClick={handleEmail}
-                className="bg-orange-500 w-14 h-14 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 hover:bg-red-500 hover:shadow-lg active:shadow-inner flex items-center justify-center p-0"
-                title="Email Me"
-              >
-                <Mail className="w-6 h-6 text-white" />
-              </Button>
-              
-              <Button
-                onClick={handleSMS}
-                className="bg-orange-500 w-14 h-14 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 hover:bg-green-500 hover:shadow-lg active:shadow-inner flex items-center justify-center p-0"
-                title="Send SMS"
-              >
-                <MessageSquare className="w-6 h-6 text-white" />
-              </Button>
-            </div>
-          </div>
-
-          <div>
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="flex items-center justify-center mb-8"
-            >
-              <motion.div
-                initial={{ height: 0 }}
-                whileInView={{ height: "120px" }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="w-2 bg-orange-500 mr-6"
-              ></motion.div>
-              <motion.h2 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="text-5xl font-bold"
-              >
-                Some About my Abilities
-              </motion.h2>
-            </motion.div>
-
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              viewport={{ once: true }}
-              className="text-gray-700 mb-12 text-center"
-            >
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
-            </motion.p>
-
-            <div className="space-y-6 max-w-3xl mx-auto">
-              {skills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex justify-between mb-2">
-                    <span className="font-medium text-gray-900">
-                      {skill.name} - {skill.years} years of experience
-                    </span>
-                    <span className="text-gray-600">{skill.percentage}%</span>
-                  </div>
-                  <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.percentage}%` }}
-                      transition={{ duration: 1, delay: 0.5 + index * 0.2 }}
-                      viewport={{ once: true }}
-                      className="h-full bg-gray-900 rounded-full"
-                    />
-                  </div>
-                </motion.div>
               ))}
             </div>
           </div>

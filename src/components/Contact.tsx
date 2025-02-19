@@ -1,8 +1,21 @@
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, MessageSquare } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Contact = () => {
+  const handleFacebookMessage = () => {
+    window.open('https://m.me/100090600411704', '_blank');
+  };
+
+  const handleEmail = () => {
+    window.location.href = 'mailto:josephbundok@gmail.com?subject=Inquiry for Jayce Il&body=Hello Jayce,';
+  };
+
+  const handleSMS = () => {
+    window.location.href = 'sms:+770221770505';
+  };
+
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -50,41 +63,37 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          <motion.form
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="flex flex-wrap gap-6 justify-center items-center"
           >
-            <div>
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-              />
-            </div>
-            <div>
-              <textarea
-                placeholder="Your Message"
-                rows={4}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-orange-500 text-white py-2 px-6 rounded-lg hover:bg-orange-600 transition-colors"
+            <Button
+              onClick={handleFacebookMessage}
+              className="bg-orange-500 w-14 h-14 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 hover:bg-blue-600 hover:shadow-lg active:shadow-inner flex items-center justify-center p-0"
+              title="Message on Facebook"
             >
-              Send Message
-            </button>
-          </motion.form>
+              <MessageCircle className="w-6 h-6 text-white" />
+            </Button>
+            
+            <Button
+              onClick={handleEmail}
+              className="bg-orange-500 w-14 h-14 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 hover:bg-red-500 hover:shadow-lg active:shadow-inner flex items-center justify-center p-0"
+              title="Email Me"
+            >
+              <Mail className="w-6 h-6 text-white" />
+            </Button>
+            
+            <Button
+              onClick={handleSMS}
+              className="bg-orange-500 w-14 h-14 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 hover:bg-green-500 hover:shadow-lg active:shadow-inner flex items-center justify-center p-0"
+              title="Send SMS"
+            >
+              <MessageSquare className="w-6 h-6 text-white" />
+            </Button>
+          </motion.div>
         </div>
       </div>
     </section>
