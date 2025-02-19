@@ -186,7 +186,7 @@ const Hero = () => {
             transition={{ delay: 0.4 }}
             className="text-2xl md:text-4xl text-white/90 mb-8 font-display pl-12 md:pl-0"
           >
-            <span className="inline-block">I'm a{" "}</span>
+            <span className="inline-block">I'm a{"  "}</span>
             <span className="font-bold text-white inline-block min-w-[300px] text-left">
               {profession}
               <span className="animate-pulse">|</span>
