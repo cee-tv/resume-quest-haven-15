@@ -1,12 +1,11 @@
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Mail, MessageCircle, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
 
   const menuItems = [
     { title: "Home", href: "#home" },
@@ -14,16 +13,6 @@ const Navigation = () => {
     { title: "Portfolio", href: "#portfolio" },
     { title: "Contact", href: "#contact" }
   ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setHasScrolled(scrollPosition > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const handleFacebookMessage = () => {
     window.open('https://m.me/100090600411704', '_blank');
@@ -39,32 +28,6 @@ const Navigation = () => {
 
   return (
     <>
-      <motion.div
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          hasScrolled ? 'bg-gradient-to-r from-orange-500/90 to-orange-600/90 backdrop-blur-sm shadow-lg' : ''
-        }`}
-        initial={false}
-        animate={hasScrolled ? { y: 0 } : { y: -100 }}
-        transition={{ duration: 0.3 }}
-        style={{ display: hasScrolled ? 'block' : 'none' }}
-      >
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex justify-end items-center">
-            <nav className="hidden md:flex space-x-8">
-              {menuItems.map((item) => (
-                <a
-                  key={item.title}
-                  href={item.href}
-                  className="text-white hover:text-gray-200 transition-colors font-medium"
-                >
-                  {item.title}
-                </a>
-              ))}
-            </nav>
-          </div>
-        </div>
-      </motion.div>
-
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed top-6 right-6 z-50 p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors"
