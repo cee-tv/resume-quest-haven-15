@@ -159,8 +159,8 @@ const About = () => {
               </div>
 
               <div className="text-left mb-2">
-                <span className="text-2xl font-bold">I'm Jayce Lumbria and </span>
-                <span className="text-orange-500 font-bold inline-block min-w-[300px] text-2xl md:text-4xl font-display">
+                <span className="text-lg font-bold">I'm Jayce Lumbria and </span>
+                <span className="text-orange-500 font-bold inline-block min-w-[300px] text-lg md:text-2xl font-display">
                   {profession}
                   <span className="animate-pulse">|</span>
                 </span>
@@ -196,8 +196,8 @@ const About = () => {
               {/* Right Column - Personal Information */}
               <div className="text-left">
                 <div className="mb-6">
-                  <span className="text-2xl font-bold">I'm Jayce Lumbria and </span>
-                  <span className="text-orange-500 font-bold inline-block min-w-[300px] text-2xl md:text-4xl font-display">
+                  <span className="text-xl font-bold">I'm Jayce Lumbria and </span>
+                  <span className="text-orange-500 font-bold inline-block min-w-[300px] text-xl md:text-3xl font-display">
                     {profession}
                     <span className="animate-pulse">|</span>
                   </span>

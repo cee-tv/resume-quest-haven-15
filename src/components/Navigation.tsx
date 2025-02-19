@@ -53,7 +53,19 @@ const Navigation = () => {
               className="ml-auto w-[200px] h-full bg-white shadow-lg flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="py-20 px-4 flex-grow">
+              {/* Logo at top */}
+              <div className="pt-16 pb-6 px-4 flex justify-center items-center">
+                <motion.img
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-bBBunvDBHMj7THszHcCEtaTodjREHS2R-QitBabPqEmhYG6D5ZJAwmPk&s=10"
+                  alt="Logo"
+                  className="w-16 h-16 rounded-full object-cover shadow-lg"
+                />
+              </div>
+              
+              <div className="px-4 flex-grow">
                 <ul className="space-y-6">
                   {menuItems.map((item) => (
                     <motion.li
@@ -102,20 +114,6 @@ const Navigation = () => {
                 >
                   <MessageSquare className="w-5 h-5" />
                 </Button>
-              </div>
-
-              {/* Logo at bottom */}
-              <div className="p-4 border-t border-gray-200">
-                <div className="flex justify-center items-center">
-                  <motion.img
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-bBBunvDBHMj7THszHcCEtaTodjREHS2R-QitBabPqEmhYG6D5ZJAwmPk&s=10"
-                    alt="Logo"
-                    className="w-16 h-16 rounded-full object-cover shadow-lg"
-                  />
-                </div>
               </div>
             </motion.nav>
           </motion.div>
