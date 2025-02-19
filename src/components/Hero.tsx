@@ -96,7 +96,7 @@ const Hero = () => {
   const [profession, setProfession] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
-  const professions = ["Seller", "Booster"];
+  const professions = ["Social Media Boosting", "Social Media Seller"];
   const period = 2000;
   const [delta, setDelta] = useState(200);
 
@@ -183,10 +183,10 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-xl md:text-2xl text-white/90 mb-8 font-display"
+            className="text-2xl md:text-4xl text-white/90 mb-8 font-display"
           >
             I'm a{" "}
-            <span className="font-bold text-white inline-block min-w-[80px] text-left">
+            <span className="font-bold text-white inline-block min-w-[300px] text-left">
               {profession}
               <span className="animate-pulse">|</span>
             </span>
