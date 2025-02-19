@@ -175,8 +175,8 @@ const Hero = () => {
             transition={{ delay: 0.3 }}
             className="text-5xl md:text-7xl font-display font-bold text-white mb-4"
           >
-            <span className="text-white">ALAN</span>{" "}
-            <span className="text-orange-500">MICHAELIS</span>
+            <span className="text-white">JAYCE</span>{" "}
+            <span className="text-orange-500">LUMBRIA</span>
           </motion.h1>
 
           <motion.div
