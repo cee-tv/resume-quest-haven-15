@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -88,18 +87,17 @@ const About = () => {
         >
           <div className="text-center">
             <div className="flex items-center mb-4">
-              <div className="w-1 bg-orange-500 h-12 mr-4"></div>
-              <h1 className="text-5xl font-bold">ABOUT ME</h1>
-            </div>
-            
-            <h2 className="text-lg text-gray-600 mb-8 text-left">Main informations about me</h2>
-
-            <div className="w-48 h-48 mx-auto mb-8 overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-                alt="Jayce Il"
-                className="w-full h-full object-cover"
-              />
+              <motion.div
+                initial={{ height: 0 }}
+                whileInView={{ height: "120px" }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="w-2 bg-orange-500 mr-6"
+              ></motion.div>
+              <div className="text-left">
+                <h1 className="text-6xl font-bold mb-2">ABOUT ME</h1>
+                <h2 className="text-lg text-gray-600">Main informations about me</h2>
+              </div>
             </div>
 
             <h1 className="text-xl font-bold mb-2 text-left">
@@ -160,10 +158,10 @@ const About = () => {
             >
               <motion.div
                 initial={{ height: 0 }}
-                whileInView={{ height: "48px" }}
+                whileInView={{ height: "120px" }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="w-1 bg-orange-500 mr-4"
+                className="w-2 bg-orange-500 mr-6"
               ></motion.div>
               <motion.h2 
                 initial={{ opacity: 0, x: -20 }}
