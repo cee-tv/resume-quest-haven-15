@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
@@ -186,7 +187,7 @@ const Hero = () => {
             className="text-2xl md:text-4xl text-white/90 mb-8 font-display"
           >
             I'm a{" "}
-            <span className="font-bold text-white inline-block min-w-[300px] text-left">
+            <span className="font-bold text-white inline-block min-w-[300px] pl-4 md:pl-0 text-center md:text-left">
               {profession}
               <span className="animate-pulse">|</span>
             </span>
