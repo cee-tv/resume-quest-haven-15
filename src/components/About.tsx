@@ -74,14 +74,21 @@ const About = () => {
         >
           {/* Personal Information Section */}
           <div className="text-center">
+            <div className="flex items-center mb-12">
+              <div className="w-1 bg-orange-500 h-12 mr-4"></div>
+              <h1 className="text-5xl font-bold">ABOUT ME</h1>
+            </div>
+
             {/* Square Image */}
-            <div className="w-48 h-48 mx-auto mb-8 overflow-hidden">
+            <div className="w-48 h-48 mx-auto mb-4 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
                 alt="Alan Michaelis"
                 className="w-full h-full object-cover"
               />
             </div>
+
+            <h2 className="text-2xl text-gray-600 mb-8">Main informations about me</h2>
 
             <h1 className="text-2xl font-bold mb-2">
               I'm Alan Michaelis and I'm a{" "}
