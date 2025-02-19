@@ -90,15 +90,15 @@ const About = () => {
   };
 
   const personalInfo = [
-    { label: "Birthday:", value: "01.07.1990" },
-    { label: "Age:", value: "28" },
-    { label: "City:", value: "New York, USA" },
-    { label: "Interests:", value: "Soccer, UFC" },
-    { label: "Study:", value: "Chicago University" },
+    { label: "Birthday:", value: "09.22.2005" },
+    { label: "Age:", value: "19" },
+    { label: "City:", value: "Manila, Philippines" },
+    { label: "Interests:", value: "Wrestling, Basketball" },
+    { label: "Study:", value: "University of the Philippines" },
     { label: "Degree:", value: "Master" },
-    { label: "Website:", value: "www.mywebsite.com" },
-    { label: "Mail:", value: "mymail@gmail.com" },
-    { label: "Phone:", value: "+770221770505" },
+    { label: "Website:", value: "www.example.com" },
+    { label: "Mail:", value: "example.gmail.com" },
+    { label: "Phone:", value: "+639463847244" },
     { label: "Facebook Pages:", value: "@mrjayceee" },
   ];
 
@@ -107,11 +107,11 @@ const About = () => {
   };
 
   const handleEmail = () => {
-    window.location.href = 'mailto:mymail@gmail.com?subject=Inquiry for Jayce Il&body=Hello Jayce,';
+    window.location.href = 'mailto:example@gmail.com?subject=Inquiry for Jayce Lumbria&body=Hello Jayce,';
   };
 
   const handleSMS = () => {
-    window.location.href = 'sms:+770221770505';
+    window.location.href = 'sms:+639463847244';
   };
 
   const skills = [
@@ -151,13 +151,13 @@ const About = () => {
               <div className="w-144 h-144 mx-auto mb-8 overflow-hidden border-4 border-orange-500">
                 <img 
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjZGKkR6-BO2HXVSbR26NGbhf5_Fyr3q2pvw&usqp=CAU"
-                  alt="Jayce Il"
+                  alt="Jayce Lumbria"
                   className="w-full h-full object-cover"
                 />
               </div>
 
               <div className="text-left mb-2">
-                <span className="text-2xl font-bold">I'm Jayce Il and I'm a </span>
+                <span className="text-2xl font-bold">I'm Jayce Lumbria and </span>
                 <span className="text-orange-500 font-bold inline-block min-w-[300px] text-2xl md:text-4xl font-display">
                   {profession}
                   <span className="animate-pulse">|</span>
@@ -165,7 +165,7 @@ const About = () => {
               </div>
 
               <p className="text-gray-700 mb-8 text-left">
-                Hi! My name is <span className="text-orange-500">Jayce Il</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
+                Hi! My name is <span className="text-orange-500">Jayce Lumbria</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 99 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
               </p>
 
               <div className="grid grid-cols-2 gap-x-8 gap-y-4 text-left max-w-2xl mx-auto mb-8">
@@ -194,7 +194,7 @@ const About = () => {
               {/* Right Column - Personal Information */}
               <div className="text-left">
                 <div className="mb-6">
-                  <span className="text-2xl font-bold">I'm Jayce Il and I'm a </span>
+                  <span className="text-2xl font-bold">I'm Jayce Lumbria and </span>
                   <span className="text-orange-500 font-bold inline-block min-w-[300px] text-2xl md:text-4xl font-display">
                     {profession}
                     <span className="animate-pulse">|</span>
@@ -202,7 +202,7 @@ const About = () => {
                 </div>
 
                 <p className="text-gray-700 mb-8">
-                  Hi! My name is <span className="text-orange-500">Jayce Il</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
+                  Hi! My name is <span className="text-orange-500">Jayce Lumbria</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
                 </p>
 
                 <div className="grid grid-cols-2 gap-x-8 gap-y-4">
