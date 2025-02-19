@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -6,7 +7,7 @@ const About = () => {
   const [profession, setProfession] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
-  const professions = ["Seller", "Booster"];
+  const professions = ["social media seller", "social media boost sale"];
   const period = 2000;
   const [delta, setDelta] = useState(200);
 
@@ -82,9 +83,9 @@ const About = () => {
               />
             </div>
 
-            <h1 className="text-3xl font-bold mb-2">
+            <h1 className="text-2xl font-bold mb-2">
               I'm Alan Michaelis and I'm a{" "}
-              <span className="text-orange-500 inline-block min-w-[80px]">
+              <span className="text-orange-500 inline-block min-w-[200px]">
                 {profession}
                 <span className="animate-pulse">|</span>
               </span>
@@ -93,10 +94,10 @@ const About = () => {
               Hi! My name is <span className="text-orange-500">Alan Michaelis</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto mb-8">
+            <div className="grid grid-cols-2 gap-x-8 gap-y-4 text-left max-w-2xl mx-auto mb-8">
               {personalInfo.map((info, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <span className="font-bold min-w-[100px]">{info.label}</span>
+                <div key={index} className="flex flex-col">
+                  <span className="font-bold">{info.label}</span>
                   <span className="text-gray-600">{info.value}</span>
                 </div>
               ))}
