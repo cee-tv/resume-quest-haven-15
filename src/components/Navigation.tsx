@@ -81,39 +81,43 @@ const Navigation = () => {
                       >
                         {item.title}
                       </a>
+                      {item.title === "Contact" && (
+                        <motion.div 
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="flex justify-center gap-2 mt-4"
+                        >
+                          <Button
+                            onClick={handleFacebookMessage}
+                            className="bg-orange-500 hover:bg-blue-600 transition-colors"
+                            size="icon"
+                            title="Message on Facebook"
+                          >
+                            <MessageCircle className="w-5 h-5" />
+                          </Button>
+                          
+                          <Button
+                            onClick={handleEmail}
+                            className="bg-orange-500 hover:bg-red-500 transition-colors"
+                            size="icon"
+                            title="Email Me"
+                          >
+                            <Mail className="w-5 h-5" />
+                          </Button>
+                          
+                          <Button
+                            onClick={handleSMS}
+                            className="bg-orange-500 hover:bg-green-500 transition-colors"
+                            size="icon"
+                            title="Send SMS"
+                          >
+                            <MessageSquare className="w-5 h-5" />
+                          </Button>
+                        </motion.div>
+                      )}
                     </motion.li>
                   ))}
                 </ul>
-              </div>
-              
-              {/* Contact Buttons */}
-              <div className="p-4 flex justify-center gap-2 border-t border-gray-200">
-                <Button
-                  onClick={handleFacebookMessage}
-                  className="bg-orange-500 hover:bg-blue-600 transition-colors"
-                  size="icon"
-                  title="Message on Facebook"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                </Button>
-                
-                <Button
-                  onClick={handleEmail}
-                  className="bg-orange-500 hover:bg-red-500 transition-colors"
-                  size="icon"
-                  title="Email Me"
-                >
-                  <Mail className="w-5 h-5" />
-                </Button>
-                
-                <Button
-                  onClick={handleSMS}
-                  className="bg-orange-500 hover:bg-green-500 transition-colors"
-                  size="icon"
-                  title="Send SMS"
-                >
-                  <MessageSquare className="w-5 h-5" />
-                </Button>
               </div>
             </motion.nav>
           </motion.div>
