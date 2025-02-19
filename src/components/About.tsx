@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -131,15 +130,29 @@ const About = () => {
             </p>
             <div className="space-y-6 max-w-3xl mx-auto">
               {skills.map((skill, index) => (
-                <div key={index} className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold">
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex justify-between mb-2">
+                    <span className="font-medium text-gray-900">
                       {skill.name} - {skill.years} years of experience
                     </span>
-                    <span className="font-bold">{skill.percentage}%</span>
+                    <span className="text-gray-600">{skill.percentage}%</span>
                   </div>
-                  <Progress value={skill.percentage} className="h-3" />
-                </div>
+                  <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.percentage}%` }}
+                      transition={{ duration: 1, delay: 0.5 }}
+                      viewport={{ once: true }}
+                      className="h-full bg-gray-900 rounded-full"
+                    />
+                  </div>
+                </motion.div>
               ))}
             </div>
           </div>
