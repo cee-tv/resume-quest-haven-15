@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -140,7 +141,7 @@ const About = () => {
 
           <div className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-16">
             <div className="space-y-8">
-              <div className="w-full aspect-[4/5] overflow-hidden bg-gray-100 border-4 border-orange-500">
+              <div className="w-full md:w-4/5 mx-auto aspect-[4/5] overflow-hidden bg-gray-100 border-4 border-orange-500">
                 <img 
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjZGKkR6-BO2HXVSbR26NGbhf5_Fyr3q2pvw&usqp=CAU"
                   alt="Jayce Il"
@@ -148,7 +149,7 @@ const About = () => {
                 />
               </div>
 
-              <div className="hidden md:block">
+              <div className="hidden md:block p-6 bg-gray-50 rounded-lg shadow-sm">
                 <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
                 <p className="text-gray-700 text-left">
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
@@ -163,13 +164,6 @@ const About = () => {
                   {profession}
                   <span className="animate-pulse">|</span>
                 </span>
-              </div>
-
-              <div className="md:hidden">
-                <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
-                <p className="text-gray-700 text-left">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
-                </p>
               </div>
 
               <p className="text-gray-700 text-left">
@@ -215,6 +209,13 @@ const About = () => {
                     />
                   </motion.div>
                 ))}
+              </div>
+
+              <div className="block md:hidden p-6 bg-gray-50 rounded-lg shadow-sm">
+                <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
+                <p className="text-gray-700 text-left">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
+                </p>
               </div>
             </div>
           </div>
