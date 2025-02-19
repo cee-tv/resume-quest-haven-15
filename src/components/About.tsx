@@ -149,11 +149,45 @@ const About = () => {
                 />
               </div>
 
-              <div className="hidden md:block p-6 bg-gray-50 rounded-lg shadow-sm">
-                <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
-                <p className="text-gray-700 text-left">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
-                </p>
+              <div className="hidden md:block">
+                <div className="p-6 bg-gray-50 rounded-lg shadow-sm mb-8">
+                  <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
+                  <p className="text-gray-700 text-left">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
+                  </p>
+                </div>
+
+                <div className="space-y-8">
+                  {skills.map((skill, index) => (
+                    <motion.div 
+                      key={index} 
+                      className="text-left"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="flex justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <span className="font-bold">{skill.name}</span>
+                          <span className="text-gray-600">- {skill.years} years of experience</span>
+                        </div>
+                        <motion.span 
+                          className="text-orange-500 font-bold"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 1 }}
+                        >
+                          {skillPercentages[skill.name]}%
+                        </motion.span>
+                      </div>
+                      <Progress 
+                        value={skillPercentages[skill.name]} 
+                        className="h-2 transition-all duration-500 ease-out"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -186,7 +220,7 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="space-y-8">
+              <div className="block md:hidden space-y-8">
                 {skills.map((skill, index) => (
                   <motion.div 
                     key={index} 
