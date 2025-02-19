@@ -1,3 +1,4 @@
+
 import { motion, useInView } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect, useRef } from "react";
@@ -216,7 +217,7 @@ const About = () => {
             <div className="mt-12" ref={skillsRef}>
               <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
               <p className="text-gray-700 mb-8 text-left">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
+                Social media has proven to be one of the most effective marketing tools in recent years, and many organizations are hiring social media specialists to help them maximize their reach and improve engagement with existing and potential customers. If you're writing your social media skills resume, you want to show a recruiter you meet all their skills requirements.
               </p>
               <div className="space-y-8">
                 {skills.map((skill, index) => (
