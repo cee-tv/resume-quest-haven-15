@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -51,14 +50,12 @@ const About = () => {
     { label: "Degree:", value: "Master" },
     { label: "Website:", value: "www.mywebsite.com" },
     { label: "Mail:", value: "mymail@gmail.com" },
-    { label: "Phone:", value: "+770221770505" }, // Removed spaces for proper tel: link
-    { label: "Twitter:", value: "@myusername" },
+    { label: "Phone:", value: "+770221770505" },
+    { label: "Facebook Pages:", value: "https://www.facebook.com/100090600411704" },
   ];
 
-  const handleDownloadCV = () => {
-    // Since we don't have a real CV file, we'll create a dummy download
-    const dummyCV = "https://example.com/JayceIl_CV.pdf";
-    window.open(dummyCV, '_blank');
+  const handleFacebookMessage = () => {
+    window.open('https://m.me/100090600411704', '_blank');
   };
 
   const handleEmail = () => {
@@ -86,7 +83,6 @@ const About = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto space-y-20"
         >
-          {/* Personal Information Section */}
           <div className="text-center">
             <div className="flex items-center mb-4">
               <div className="w-1 bg-orange-500 h-12 mr-4"></div>
@@ -95,7 +91,6 @@ const About = () => {
             
             <h2 className="text-lg text-gray-600 mb-8 text-left">Main informations about me</h2>
 
-            {/* Square Image */}
             <div className="w-48 h-48 mx-auto mb-8 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
@@ -127,10 +122,10 @@ const About = () => {
 
             <div className="flex gap-4 justify-center">
               <button 
-                onClick={handleDownloadCV}
+                onClick={handleFacebookMessage}
                 className="bg-orange-500 text-white px-8 py-3 rounded hover:bg-orange-600 transition-colors"
               >
-                Download CV
+                Message on Facebook
               </button>
               <button 
                 onClick={handleEmail}
@@ -147,7 +142,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Skills Section */}
           <div>
             <div className="flex items-center justify-center mb-8">
               <div className="w-1 bg-orange-500 h-12 mr-4"></div>
