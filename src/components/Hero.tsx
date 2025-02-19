@@ -97,7 +97,7 @@ const Hero = () => {
   const [profession, setProfession] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
-  const professions = ["Social Media Boosting", "Social Media Seller"];
+  const professions = ["Social Media Boosting", "Social Media Seller"]; // No change needed here as these already have spaces
   const period = 2000;
   const [delta, setDelta] = useState(200);
 
