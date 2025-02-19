@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -27,16 +28,38 @@ const About = () => {
   }, [profession, delta, isDeleting]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      skills.forEach((skill) => {
-        setSkillPercentages(prev => ({
-          ...prev,
-          [skill.name]: skill.percentage
-        }));
-      });
-    }, 500);
+    // Start with 0 for all skills
+    setSkillPercentages({
+      Wordpress: 0,
+      CSS: 0,
+      HTML: 0,
+      "After Effect": 0
+    });
 
-    return () => clearTimeout(timer);
+    // Animate each skill percentage gradually
+    skills.forEach((skill, index) => {
+      let startTime = Date.now();
+      const duration = 2000; // 2 seconds animation
+      const startDelay = index * 200; // Stagger start of each skill
+
+      setTimeout(() => {
+        const timer = setInterval(() => {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          setSkillPercentages(prev => ({
+            ...prev,
+            [skill.name]: Math.round(progress * skill.percentage)
+          }));
+
+          if (progress >= 1) {
+            clearInterval(timer);
+          }
+        }, 20);
+
+        return () => clearInterval(timer);
+      }, startDelay);
+    });
   }, []);
 
   const tick = () => {
@@ -172,14 +195,14 @@ const About = () => {
                         className="text-orange-500 font-bold"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
+                        transition={{ duration: 0.5 }}
                       >
                         {skillPercentages[skill.name]}%
                       </motion.span>
                     </div>
                     <Progress 
                       value={skillPercentages[skill.name]} 
-                      className="h-2 transition-all duration-1000 ease-out"
+                      className="h-2 transition-all duration-300 ease-out"
                     />
                   </motion.div>
                 ))}
