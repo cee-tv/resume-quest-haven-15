@@ -46,13 +46,13 @@ const ParticleBackground = () => {
         if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
 
-        // Draw particle (increased size from 2 to 4)
+        // Draw particle (increased size and opacity)
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, 4, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'; // Increased opacity from 0.3 to 0.5
+        ctx.arc(particle.x, particle.y, 6, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
         ctx.fill();
 
-        // Draw lines to nearby particles (increased distance from 100 to 200)
+        // Draw lines to nearby particles (increased visibility)
         particlePositions.current.forEach((otherParticle, j) => {
           if (i === j) return;
           
@@ -60,12 +60,12 @@ const ParticleBackground = () => {
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 200) { // Increased connection distance
+          if (distance < 200) {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.3 * (1 - distance / 200)})`; // Increased line opacity from 0.2 to 0.3
-            ctx.lineWidth = 1; // Increased line width from 0.5 to 1
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.6 * (1 - distance / 200)})`;
+            ctx.lineWidth = 2;
             ctx.stroke();
           }
         });
@@ -141,9 +141,9 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/90 to-blue-900/80 z-0">
         <img 
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-bBBunvDBHMj7THszHcCEtaTodjREHS2R-QitBabPqEmhYG6D5ZJAwmPk&s=10"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLAX4lMpz2ywWkvREZvPN007kyzZn1BfZXEv0rsfJWb2aYy52tqrUxSzY&s=10"
           alt="Background"
-          className="w-full h-full object-cover mix-blend-overlay"
+          className="w-full h-full object-cover mix-blend-overlay opacity-80"
         />
         <ParticleBackground />
       </div>
