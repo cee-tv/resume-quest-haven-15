@@ -50,10 +50,10 @@ const Navigation = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="ml-auto w-[300px] h-full bg-white shadow-lg flex flex-col"
+              className="ml-auto w-[250px] h-full bg-white shadow-lg flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="py-20 px-6 flex-grow">
+              <div className="py-20 px-4 flex-grow">
                 <ul className="space-y-6">
                   {menuItems.map((item) => (
                     <motion.li
@@ -64,7 +64,7 @@ const Navigation = () => {
                     >
                       <a
                         href={item.href}
-                        className="text-2xl font-display text-gray-900 hover:text-gray-600 transition-colors block py-2"
+                        className="text-xl font-display text-gray-900 hover:text-gray-600 transition-colors block py-2"
                         onClick={() => setIsOpen(false)}
                       >
                         {item.title}
@@ -75,34 +75,46 @@ const Navigation = () => {
               </div>
               
               {/* Contact Buttons */}
-              <div className="p-6 border-t border-gray-200">
-                <div className="flex flex-col gap-4">
-                  <Button
-                    onClick={handleFacebookMessage}
-                    className="w-full bg-orange-500 hover:bg-blue-600 transition-colors flex items-center justify-center gap-2"
-                    title="Message on Facebook"
-                  >
-                    <MessageCircle className="w-5 h-5" />
-                    <span>Message on Facebook</span>
-                  </Button>
-                  
-                  <Button
-                    onClick={handleEmail}
-                    className="w-full bg-orange-500 hover:bg-red-500 transition-colors flex items-center justify-center gap-2"
-                    title="Email Me"
-                  >
-                    <Mail className="w-5 h-5" />
-                    <span>Email Me</span>
-                  </Button>
-                  
-                  <Button
-                    onClick={handleSMS}
-                    className="w-full bg-orange-500 hover:bg-green-500 transition-colors flex items-center justify-center gap-2"
-                    title="Send SMS"
-                  >
-                    <MessageSquare className="w-5 h-5" />
-                    <span>Send SMS</span>
-                  </Button>
+              <div className="p-4 space-y-3 border-t border-gray-200">
+                <Button
+                  onClick={handleFacebookMessage}
+                  className="w-full bg-orange-500 hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 text-sm"
+                  title="Message on Facebook"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Message on Facebook</span>
+                </Button>
+                
+                <Button
+                  onClick={handleEmail}
+                  className="w-full bg-orange-500 hover:bg-red-500 transition-colors flex items-center justify-center gap-2 text-sm"
+                  title="Email Me"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>Email Me</span>
+                </Button>
+                
+                <Button
+                  onClick={handleSMS}
+                  className="w-full bg-orange-500 hover:bg-green-500 transition-colors flex items-center justify-center gap-2 text-sm"
+                  title="Send SMS"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Send SMS</span>
+                </Button>
+              </div>
+
+              {/* Logo at bottom */}
+              <div className="p-4 border-t border-gray-200">
+                <div className="flex justify-center items-center">
+                  <motion.img
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-bBBunvDBHMj7THszHcCEtaTodjREHS2R-QitBabPqEmhYG6D5ZJAwmPk&s=10"
+                    alt="Logo"
+                    className="w-16 h-16 rounded-full object-cover shadow-lg"
+                  />
                 </div>
               </div>
             </motion.nav>
