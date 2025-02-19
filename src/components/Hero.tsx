@@ -51,37 +51,14 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Image with Static Effect */}
+      {/* Background Image */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/90 to-blue-900/80 z-0">
         <img 
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-bBBunvDBHMj7THszHcCEtaTodjREHS2R-QitBabPqEmhYG6D5ZJAwmPk&s=10"
           alt="Background"
           className="w-full h-full object-cover mix-blend-overlay"
         />
-        {/* Static Effect Overlay */}
-        <div 
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-            animation: 'noise 1s steps(2) infinite'
-          }}
-        />
       </div>
-
-      <style jsx>{`
-        @keyframes noise {
-          0%, 100% { transform: translate(0, 0) }
-          10% { transform: translate(-5%, -5%) }
-          20% { transform: translate(-10%, 5%) }
-          30% { transform: translate(5%, -10%) }
-          40% { transform: translate(-5%, 15%) }
-          50% { transform: translate(-10%, 5%) }
-          60% { transform: translate(15%, 0) }
-          70% { transform: translate(0, 10%) }
-          80% { transform: translate(-15%, 0) }
-          90% { transform: translate(10%, 5%) }
-        }
-      `}</style>
 
       <div className="container mx-auto px-4 text-center relative z-10">
         <motion.div
