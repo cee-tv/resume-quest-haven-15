@@ -25,12 +25,12 @@ const Contact = () => {
     try {
       await emailjs.send(
         'service_408p602',
-        'template_e2beuee',
+        'template_fidin5j',     // Updated template ID
         {
-          name: formData.name,           // Changed from from_name
-          email: formData.email,         // Changed from from_email
-          subject: formData.subject,     // Kept as is
-          message: formData.message,     // Kept as is
+          name: formData.name,           
+          email: formData.email,         
+          subject: formData.subject,     
+          message: formData.message,     
         },
         'uA_uylHshJmE72iKH'
       );
