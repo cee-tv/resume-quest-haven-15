@@ -150,13 +150,13 @@ const About = () => {
               />
             </div>
 
-            <h1 className="text-xl font-bold mb-2 text-center">
-              I'm Jayce Il and I'm a{" "}
+            <div className="text-left mb-2">
+              <span className="text-xl font-bold">I'm Jayce Il and I'm a </span>
               <span className="text-orange-500 inline-block min-w-[200px]">
                 {profession}
                 <span className="animate-pulse">|</span>
               </span>
-            </h1>
+            </div>
 
             <p className="text-gray-700 mb-8 text-left">
               Hi! My name is <span className="text-orange-500">Jayce Il</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
