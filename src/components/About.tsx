@@ -132,12 +132,18 @@ const About = () => {
 
             <div className="mt-12">
               <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
-              <div className="space-y-6">
+              <p className="text-gray-700 mb-8 text-left">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
+              </p>
+              <div className="space-y-8">
                 {skills.map((skill, index) => (
                   <div key={index} className="text-left">
                     <div className="flex justify-between mb-2">
-                      <span className="font-bold">{skill.name}</span>
-                      <span className="text-orange-500">{skill.years} Years Experience</span>
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold">{skill.name}</span>
+                        <span className="text-gray-600">- {skill.years} years of experience</span>
+                      </div>
+                      <span className="text-orange-500 font-bold">{skill.percentage}%</span>
                     </div>
                     <Progress value={skill.percentage} className="h-2" />
                   </div>
