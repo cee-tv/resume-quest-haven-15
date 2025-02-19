@@ -54,7 +54,7 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-900/90 to-blue-900/80 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-bBBunvDBHMj7THszHcCEtaTodjREHS2R-QitBabPqEmhYG6D5ZJAwmPk&s=10"
           alt="Background"
           className="w-full h-full object-cover mix-blend-overlay"
         />
@@ -75,7 +75,7 @@ const Hero = () => {
             className="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white/20 overflow-hidden mb-8 shadow-xl"
           >
             <img
-              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-bBBunvDBHMj7THszHcCEtaTodjREHS2R-QitBabPqEmhYG6D5ZJAwmPk&s=10"
               alt="Profile"
               className="w-full h-full object-cover"
             />

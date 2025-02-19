@@ -103,7 +103,7 @@ const About = () => {
 
             <div className="w-48 h-48 mx-auto mb-8 overflow-hidden rounded-full border-4 border-orange-500">
               <img 
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-bBBunvDBHMj7THszHcCEtaTodjREHS2R-QitBabPqEmhYG6D5ZJAwmPk&s=10"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjZGKkR6-BO2HXVSbR26NGbhf5_Fyr3q2pvw&usqp=CAU"
                 alt="Jayce Il"
                 className="w-full h-full object-cover"
               />
