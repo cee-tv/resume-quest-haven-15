@@ -72,7 +72,7 @@ const Hero = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
-            className="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white/20 overflow-hidden mb-8 shadow-xl"
+            className="w-60 h-60 md:w-72 md:h-72 rounded-full border-4 border-white/20 overflow-hidden mb-8 shadow-xl"
           >
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-bBBunvDBHMj7THszHcCEtaTodjREHS2R-QitBabPqEmhYG6D5ZJAwmPk&s=10"
