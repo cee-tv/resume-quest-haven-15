@@ -141,7 +141,8 @@ const About = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          {/* Desktop Layout */}
+          <div className="hidden md:grid md:grid-cols-2 gap-12">
             {/* Left Column - Image */}
             <div>
               <div className="relative w-full aspect-[4/5] overflow-hidden border-4 border-orange-500 rounded-lg">
@@ -193,6 +194,59 @@ const About = () => {
                 >
                   Download CV
                 </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="block md:hidden">
+            <div className="space-y-8">
+              <div className="w-full aspect-[4/5] overflow-hidden border-4 border-orange-500">
+                <img 
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjZGKkR6-BO2HXVSbR26NGbhf5_Fyr3q2pvw&usqp=CAU"
+                  alt="Jayce Il"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <div className="text-left">
+                <div className="mb-6">
+                  <span className="text-xl font-bold">I'm Jayce Il and I'm a </span>
+                  <span className="text-orange-500 inline-block min-w-[200px]">
+                    {profession}
+                    <span className="animate-pulse">|</span>
+                  </span>
+                </div>
+
+                <p className="text-gray-700">
+                  Hi! My name is <span className="text-orange-500">Jayce Il</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
+                </p>
+
+                <div className="grid grid-cols-2 gap-x-8 gap-y-4 mt-8">
+                  {personalInfo.map((info, index) => (
+                    <div key={index} className="flex flex-col">
+                      <span className="font-bold">{info.label}</span>
+                      <span className="text-gray-600">{info.value}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex gap-4 mt-8">
+                  <Button 
+                    variant="default"
+                    className="bg-orange-500 hover:bg-orange-600"
+                    onClick={handleFacebookMessage}
+                  >
+                    Send Message
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className="border-orange-500 text-orange-500 hover:bg-orange-50"
+                    onClick={handleEmail}
+                  >
+                    Download CV
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
