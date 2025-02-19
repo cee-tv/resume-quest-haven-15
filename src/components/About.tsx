@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { MessageCircle, Mail, MessageSquare } from "lucide-react";
 
 const About = () => {
   const [profession, setProfession] = useState("");
@@ -121,25 +123,30 @@ const About = () => {
               ))}
             </div>
 
-            <div className="flex gap-4 justify-center">
-              <button 
+            <div className="flex flex-wrap gap-4 justify-center mt-8">
+              <Button
                 onClick={handleFacebookMessage}
-                className="bg-orange-500 text-white px-8 py-3 rounded hover:bg-orange-600 transition-colors"
+                className="bg-orange-500 hover:bg-orange-600 text-white min-w-[200px] h-12 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
               >
+                <MessageCircle className="w-5 h-5" />
                 Message on Facebook
-              </button>
-              <button 
+              </Button>
+              
+              <Button
                 onClick={handleEmail}
-                className="bg-orange-500 text-white px-8 py-3 rounded hover:bg-orange-600 transition-colors"
+                className="bg-orange-500 hover:bg-orange-600 text-white min-w-[200px] h-12 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
               >
+                <Mail className="w-5 h-5" />
                 Email Me
-              </button>
-              <button 
+              </Button>
+              
+              <Button
                 onClick={handleSMS}
-                className="bg-orange-500 text-white px-8 py-3 rounded hover:bg-orange-600 transition-colors"
+                className="bg-orange-500 hover:bg-orange-600 text-white min-w-[200px] h-12 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
               >
+                <MessageSquare className="w-5 h-5" />
                 Send SMS
-              </button>
+              </Button>
             </div>
           </div>
 
