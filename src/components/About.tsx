@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -9,6 +8,12 @@ const About = () => {
   const [profession, setProfession] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
+  const [skillPercentages, setSkillPercentages] = useState({
+    Wordpress: 0,
+    CSS: 0,
+    HTML: 0,
+    "After Effect": 0
+  });
   const professions = ["Social Media Boosting", "Social Media Seller"];
   const period = 2000;
   const [delta, setDelta] = useState(200);
@@ -20,6 +25,19 @@ const About = () => {
 
     return () => clearInterval(ticker);
   }, [profession, delta, isDeleting]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      skills.forEach((skill) => {
+        setSkillPercentages(prev => ({
+          ...prev,
+          [skill.name]: skill.percentage
+        }));
+      });
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const tick = () => {
     let i = loopNum % professions.length;
@@ -137,16 +155,33 @@ const About = () => {
               </p>
               <div className="space-y-8">
                 {skills.map((skill, index) => (
-                  <div key={index} className="text-left">
+                  <motion.div 
+                    key={index} 
+                    className="text-left"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
                     <div className="flex justify-between mb-2">
                       <div className="flex items-center gap-2">
                         <span className="font-bold">{skill.name}</span>
                         <span className="text-gray-600">- {skill.years} years of experience</span>
                       </div>
-                      <span className="text-orange-500 font-bold">{skill.percentage}%</span>
+                      <motion.span 
+                        className="text-orange-500 font-bold"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
+                      >
+                        {skillPercentages[skill.name]}%
+                      </motion.span>
                     </div>
-                    <Progress value={skill.percentage} className="h-2" />
-                  </div>
+                    <Progress 
+                      value={skillPercentages[skill.name]} 
+                      className="h-2 transition-all duration-1000 ease-out"
+                    />
+                  </motion.div>
                 ))}
               </div>
             </div>
