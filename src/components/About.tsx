@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -139,6 +140,7 @@ const About = () => {
           </div>
 
           <div className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-16">
+            {/* Left Side Content */}
             <div className="space-y-8">
               <div className="w-full aspect-[4/5] overflow-hidden bg-gray-100 border-4 border-orange-500">
                 <img 
@@ -146,6 +148,13 @@ const About = () => {
                   alt="Jayce Il"
                   className="w-full h-full object-cover"
                 />
+              </div>
+
+              <div className="block md:hidden">
+                <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
+                <p className="text-gray-700 text-left">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
+                </p>
               </div>
 
               <div className="hidden md:block">
@@ -156,6 +165,7 @@ const About = () => {
               </div>
             </div>
 
+            {/* Right Side Content */}
             <div className="space-y-8">
               <div className="text-left">
                 <span className="text-xl font-bold">I'm Jayce Il and I'm a </span>
@@ -163,13 +173,6 @@ const About = () => {
                   {profession}
                   <span className="animate-pulse">|</span>
                 </span>
-              </div>
-
-              <div className="md:hidden">
-                <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
-                <p className="text-gray-700 text-left">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
-                </p>
               </div>
 
               <p className="text-gray-700 text-left">
