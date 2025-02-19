@@ -12,7 +12,6 @@ const About = () => {
     BOOSTER: 0,
     SELLER: 0,
     DEVELOPER: 0,
-    "After Effect": 0
   });
   const professions = ["Social Media Boosting", "Social Media Seller"];
   const period = 2000;
@@ -36,7 +35,6 @@ const About = () => {
         BOOSTER: 0,
         SELLER: 0,
         DEVELOPER: 0,
-        "After Effect": 0
       });
 
       // Animate each skill percentage gradually
@@ -64,7 +62,7 @@ const About = () => {
         }, startDelay);
       });
     }
-  }, [isInView]); // Now depends on isInView
+  }, [isInView]);
 
   const tick = () => {
     let i = loopNum % professions.length;
@@ -97,7 +95,7 @@ const About = () => {
     { label: "Study:", value: "University of the Philippines" },
     { label: "Degree:", value: "Master" },
     { label: "Website:", value: "www.example.com" },
-    { label: "Mail:", value: "example.gmail.com" },
+    { label: "Mail:", value: "example@gmail.com" },
     { label: "Phone:", value: "+639463847244" },
     { label: "Facebook Pages:", value: "@mrjayceee" },
   ];
@@ -118,7 +116,6 @@ const About = () => {
     { name: "BOOSTER", years: 5, percentage: 95 },
     { name: "SELLER", years: 3, percentage: 85 },
     { name: "DEVELOPER", years: 4, percentage: 75 },
-    { name: "After Effect", years: 6, percentage: 90 },
   ];
 
   return (
