@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -16,8 +15,8 @@ const About = () => {
     "After Effect": 0
   });
   const professions = ["Social Media Boosting", "Social Media Seller"];
-  const period = 2000;
-  const [delta, setDelta] = useState(200);
+  const period = 3000;
+  const [delta, setDelta] = useState(300);
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -28,7 +27,6 @@ const About = () => {
   }, [profession, delta, isDeleting]);
 
   useEffect(() => {
-    // Start with 0 for all skills
     setSkillPercentages({
       Wordpress: 0,
       CSS: 0,
@@ -36,11 +34,10 @@ const About = () => {
       "After Effect": 0
     });
 
-    // Animate each skill percentage gradually
     skills.forEach((skill, index) => {
       let startTime = Date.now();
-      const duration = 4000; // 4 seconds animation
-      const startDelay = index * 300; // Increased delay between skills
+      const duration = 4000;
+      const startDelay = index * 300;
 
       setTimeout(() => {
         const timer = setInterval(() => {
@@ -72,7 +69,7 @@ const About = () => {
     setProfession(updatedText);
 
     if (isDeleting) {
-      setDelta(prevDelta => prevDelta / 2);
+      setDelta(prevDelta => prevDelta / 1.5);
     }
 
     if (!isDeleting && updatedText === fullText) {
@@ -81,7 +78,7 @@ const About = () => {
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setDelta(200);
+      setDelta(300);
     }
   };
 
@@ -138,7 +135,13 @@ const About = () => {
               ></motion.div>
               <div className="text-left">
                 <h1 className="text-2xl font-bold mb-2">ABOUT ME</h1>
-                <h2 className="text-lg text-gray-600">Main informations about me</h2>
+                <h2 className="text-lg text-gray-600">
+                  I'm a {" "}
+                  <span className="text-orange-500 inline-block min-w-[200px] text-left">
+                    {profession}
+                    <span className="animate-pulse">|</span>
+                  </span>
+                </h2>
               </div>
             </div>
 
