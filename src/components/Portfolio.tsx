@@ -33,10 +33,19 @@ const Portfolio = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-display font-bold mb-4">Portfolio</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Check out our latest creative works
-          </p>
+          <div className="flex items-center mb-4">
+            <motion.div
+              initial={{ height: 0 }}
+              whileInView={{ height: "120px" }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="w-2 bg-orange-500 mr-6"
+            ></motion.div>
+            <div className="text-left">
+              <h1 className="text-6xl font-bold mb-2">PORTFOLIO</h1>
+              <h2 className="text-lg text-gray-600">Check out our latest creative works</h2>
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

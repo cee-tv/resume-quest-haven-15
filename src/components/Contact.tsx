@@ -26,10 +26,19 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-display font-bold mb-4">Contact Me</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Get in touch with me
-          </p>
+          <div className="flex items-center mb-4">
+            <motion.div
+              initial={{ height: 0 }}
+              whileInView={{ height: "120px" }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="w-2 bg-orange-500 mr-6"
+            ></motion.div>
+            <div className="text-left">
+              <h1 className="text-6xl font-bold mb-2">CONTACT ME</h1>
+              <h2 className="text-lg text-gray-600">Get in touch with me</h2>
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
