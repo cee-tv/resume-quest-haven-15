@@ -3,6 +3,44 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 
+const ParticleBackground = () => {
+  const particles = Array.from({ length: 50 });
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {particles.map((_, i) => {
+        const size = Math.random() * 3 + 1;
+        const initialX = Math.random() * 100;
+        const initialY = Math.random() * 100;
+        
+        return (
+          <motion.div
+            key={i}
+            className="absolute bg-white/30 rounded-full"
+            style={{
+              width: size,
+              height: size,
+              left: `${initialX}%`,
+              top: `${initialY}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              x: [0, Math.random() * 20 - 10, 0],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: Math.random() * 3 + 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: Math.random() * 2,
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
 const Hero = () => {
   const [profession, setProfession] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -58,6 +96,7 @@ const Hero = () => {
           alt="Background"
           className="w-full h-full object-cover mix-blend-overlay"
         />
+        <ParticleBackground />
       </div>
 
       <div className="container mx-auto px-4 text-center relative z-10">
