@@ -151,20 +151,48 @@ const About = () => {
           </div>
 
           <div>
-            <div className="flex items-center justify-center mb-8">
-              <div className="w-1 bg-orange-500 h-12 mr-4"></div>
-              <h2 className="text-5xl font-bold">Some About my Abilities</h2>
-            </div>
-            <p className="text-gray-700 mb-12 text-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="flex items-center justify-center mb-8"
+            >
+              <motion.div
+                initial={{ height: 0 }}
+                whileInView={{ height: "48px" }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="w-1 bg-orange-500 mr-4"
+              ></motion.div>
+              <motion.h2 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="text-5xl font-bold"
+              >
+                Some About my Abilities
+              </motion.h2>
+            </motion.div>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="text-gray-700 mb-12 text-center"
+            >
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
-            </p>
+            </motion.p>
+
             <div className="space-y-6 max-w-3xl mx-auto">
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
                 >
                   <div className="flex justify-between mb-2">
@@ -177,7 +205,7 @@ const About = () => {
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.percentage}%` }}
-                      transition={{ duration: 1, delay: 0.5 }}
+                      transition={{ duration: 1, delay: 0.5 + index * 0.2 }}
                       viewport={{ once: true }}
                       className="h-full bg-gray-900 rounded-full"
                     />
