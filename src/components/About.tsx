@@ -115,9 +115,9 @@ const About = () => {
   };
 
   const skills = [
-    { name: "Wordpress", years: 5, percentage: 95 },
-    { name: "CSS", years: 3, percentage: 85 },
-    { name: "HTML", years: 4, percentage: 75 },
+    { name: "BOOSTER", years: 5, percentage: 95 },
+    { name: "SELLER", years: 3, percentage: 85 },
+    { name: "DEVELOPER", years: 4, percentage: 75 },
     { name: "After Effect", years: 6, percentage: 90 },
   ];
 
