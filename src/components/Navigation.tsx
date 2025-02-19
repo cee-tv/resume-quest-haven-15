@@ -19,11 +19,11 @@ const Navigation = () => {
   };
 
   const handleEmail = () => {
-    window.location.href = 'mailto:josephbundok@gmail.com?subject=Inquiry for Jayce Il&body=Hello Jayce,';
+    window.location.href = 'mailto:example@gmail.com?subject=Inquiry for Jayce Lumbria&body=Hello Jayce,';
   };
 
   const handleSMS = () => {
-    window.location.href = 'sms:+770221770505';
+    window.location.href = 'sms:+639463847244';
   };
 
   return (
