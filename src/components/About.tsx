@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -95,7 +96,7 @@ const About = () => {
                 className="w-2 bg-orange-500 mr-6"
               ></motion.div>
               <div className="text-left">
-                <h1 className="text-4xl font-bold mb-2">ABOUT ME</h1>
+                <h1 className="text-2xl font-bold mb-2">ABOUT ME</h1>
                 <h2 className="text-lg text-gray-600">Main informations about me</h2>
               </div>
             </div>
@@ -108,7 +109,7 @@ const About = () => {
               />
             </div>
 
-            <h1 className="text-xl font-bold mb-2 text-left">
+            <h1 className="text-xl font-bold mb-2 text-center">
               I'm Jayce Il and I'm a{" "}
               <span className="text-orange-500 inline-block min-w-[200px]">
                 {profession}
@@ -116,7 +117,7 @@ const About = () => {
               </span>
             </h1>
 
-            <p className="text-gray-700 mb-8 max-w-3xl mx-auto">
+            <p className="text-gray-700 mb-8 text-left">
               Hi! My name is <span className="text-orange-500">Jayce Il</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
             </p>
 
