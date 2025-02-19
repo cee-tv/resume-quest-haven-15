@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
@@ -5,7 +6,8 @@ import { useState, useEffect, useRef } from "react";
 const ParticleBackground = () => {
   const particles = Array.from({ length: 50 });
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlePositions = useRef<{ x: number; y: number; vx: number; vy: number }[]>([]);
+  const particlePositions = useRef<{ x: number; y: number; vx: number; vy: number; alpha: number }[]>([]);
+  const frameCount = useRef(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -22,22 +24,24 @@ const ParticleBackground = () => {
     setCanvasSize();
     window.addEventListener('resize', setCanvasSize);
 
-    // Initialize particles
+    // Initialize particles with alpha value for blinking
     particlePositions.current = particles.map(() => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
+      vx: (Math.random() - 0.5) * 2, // Increased velocity
+      vy: (Math.random() - 0.5) * 2, // Increased velocity
+      alpha: Math.random()
     }));
 
     const animate = () => {
       if (!ctx || !canvas) return;
       
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      frameCount.current++;
       
       // Update and draw particles
       particlePositions.current.forEach((particle, i) => {
-        // Update position
+        // Update position with faster movement
         particle.x += particle.vx;
         particle.y += particle.vy;
 
@@ -45,13 +49,17 @@ const ParticleBackground = () => {
         if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
 
-        // Draw particle (increased size and opacity)
+        // Update particle alpha for blinking effect
+        particle.alpha += Math.sin(frameCount.current * 0.1) * 0.02;
+        particle.alpha = Math.max(0.3, Math.min(1, particle.alpha));
+
+        // Draw particle with blinking effect
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, 6, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.fillStyle = `rgba(255, 255, 255, ${particle.alpha})`;
         ctx.fill();
 
-        // Draw lines to nearby particles (increased visibility)
+        // Draw lines to nearby particles with dynamic opacity
         particlePositions.current.forEach((otherParticle, j) => {
           if (i === j) return;
           
@@ -60,10 +68,14 @@ const ParticleBackground = () => {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 200) {
+            const lineAlpha = (1 - distance / 200) * 
+                            Math.min(particle.alpha, otherParticle.alpha) * 
+                            (0.8 + Math.sin(frameCount.current * 0.05) * 0.2);
+            
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.6 * (1 - distance / 200)})`;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${lineAlpha})`;
             ctx.lineWidth = 2;
             ctx.stroke();
           }
