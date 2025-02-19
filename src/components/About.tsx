@@ -1,8 +1,47 @@
 
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
+import { useState, useEffect } from "react";
 
 const About = () => {
+  const [profession, setProfession] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const professions = ["Seller", "Booster"];
+  const period = 2000;
+  const [delta, setDelta] = useState(200);
+
+  useEffect(() => {
+    let ticker = setInterval(() => {
+      tick();
+    }, delta);
+
+    return () => clearInterval(ticker);
+  }, [profession, delta, isDeleting]);
+
+  const tick = () => {
+    let i = loopNum % professions.length;
+    let fullText = professions[i];
+    let updatedText = isDeleting 
+      ? fullText.substring(0, profession.length - 1)
+      : fullText.substring(0, profession.length + 1);
+
+    setProfession(updatedText);
+
+    if (isDeleting) {
+      setDelta(prevDelta => prevDelta / 2);
+    }
+
+    if (!isDeleting && updatedText === fullText) {
+      setIsDeleting(true);
+      setDelta(period);
+    } else if (isDeleting && updatedText === '') {
+      setIsDeleting(false);
+      setLoopNum(loopNum + 1);
+      setDelta(200);
+    }
+  };
+
   const skills = [
     { name: "Wordpress", years: 5, percentage: 95 },
     { name: "CSS", years: 3, percentage: 85 },
@@ -35,8 +74,21 @@ const About = () => {
         >
           {/* Personal Information Section */}
           <div className="text-center">
+            {/* Square Image */}
+            <div className="w-48 h-48 mx-auto mb-8 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+                alt="Alan Michaelis"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             <h1 className="text-5xl font-bold mb-2">
-              I'm Alan Michaelis and <span className="text-orange-500">Web Develop</span>
+              I'm Alan Michaelis and I'm a{" "}
+              <span className="text-orange-500 inline-block min-w-[80px]">
+                {profession}
+                <span className="animate-pulse">|</span>
+              </span>
             </h1>
             <p className="text-gray-700 mb-8 max-w-3xl mx-auto">
               Hi! My name is <span className="text-orange-500">Alan Michaelis</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
