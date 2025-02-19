@@ -95,7 +95,7 @@ const About = () => {
                 className="w-2 bg-orange-500 mr-6"
               ></motion.div>
               <div className="text-left">
-                <h1 className="text-6xl font-bold mb-2">ABOUT ME</h1>
+                <h1 className="text-4xl font-bold mb-2">ABOUT ME</h1>
                 <h2 className="text-lg text-gray-600">Main informations about me</h2>
               </div>
             </div>
