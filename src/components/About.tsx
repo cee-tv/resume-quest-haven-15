@@ -151,9 +151,9 @@ const About = () => {
                 />
               </div>
 
-              <div className="text-left mb-2">
+              <div className="text-center md:text-left mb-2">
                 <span className="text-2xl font-bold">I'm Jayce Il and I'm a </span>
-                <span className="text-orange-500 font-bold inline-block min-w-[300px] text-2xl md:text-4xl font-display">
+                <span className="text-orange-500 font-bold inline-block min-w-[300px] text-2xl md:text-3xl font-display text-center md:text-left">
                   {profession}
                   <span className="animate-pulse">|</span>
                 </span>
@@ -190,7 +190,7 @@ const About = () => {
               <div className="text-left">
                 <div className="mb-6">
                   <span className="text-2xl font-bold">I'm Jayce Il and I'm a </span>
-                  <span className="text-orange-500 font-bold inline-block min-w-[300px] text-2xl md:text-4xl font-display">
+                  <span className="text-orange-500 font-bold inline-block min-w-[300px] text-2xl md:text-3xl font-display">
                     {profession}
                     <span className="animate-pulse">|</span>
                   </span>

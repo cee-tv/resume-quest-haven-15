@@ -183,10 +183,10 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-2xl md:text-4xl text-white/90 mb-8 font-display"
+            className="text-2xl md:text-3xl text-white/90 mb-8 font-display"
           >
             I'm a{" "}
-            <span className="font-bold text-white inline-block min-w-[300px] text-left">
+            <span className="font-bold text-white inline-block min-w-[300px] md:text-left text-center">
               {profession}
               <span className="animate-pulse">|</span>
             </span>
