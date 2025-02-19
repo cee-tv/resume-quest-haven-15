@@ -129,6 +129,21 @@ const About = () => {
                 </div>
               ))}
             </div>
+
+            <div className="mt-12">
+              <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
+              <div className="space-y-6">
+                {skills.map((skill, index) => (
+                  <div key={index} className="text-left">
+                    <div className="flex justify-between mb-2">
+                      <span className="font-bold">{skill.name}</span>
+                      <span className="text-orange-500">{skill.years} Years Experience</span>
+                    </div>
+                    <Progress value={skill.percentage} className="h-2" />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
