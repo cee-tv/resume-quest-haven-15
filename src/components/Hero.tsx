@@ -1,8 +1,54 @@
 
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const [profession, setProfession] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const professions = ["Seller", "Booster"];
+  const period = 2000;
+  const [delta, setDelta] = useState(200);
+
+  useEffect(() => {
+    let ticker = setInterval(() => {
+      tick();
+    }, delta);
+
+    return () => clearInterval(ticker);
+  }, [profession, delta, isDeleting]);
+
+  const tick = () => {
+    let i = loopNum % professions.length;
+    let fullText = professions[i];
+    let updatedText = isDeleting 
+      ? fullText.substring(0, profession.length - 1)
+      : fullText.substring(0, profession.length + 1);
+
+    setProfession(updatedText);
+
+    if (isDeleting) {
+      setDelta(prevDelta => prevDelta / 2);
+    }
+
+    if (!isDeleting && updatedText === fullText) {
+      setIsDeleting(true);
+      setDelta(period);
+    } else if (isDeleting && updatedText === '') {
+      setIsDeleting(false);
+      setLoopNum(loopNum + 1);
+      setDelta(200);
+    }
+  };
+
+  const scrollToNextSection = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Image */}
@@ -46,7 +92,7 @@ const Hero = () => {
             <span className="text-orange-500">MICHAELIS</span>
           </motion.h1>
 
-          {/* Profession */}
+          {/* Profession with Typing Effect */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -54,13 +100,10 @@ const Hero = () => {
             className="text-xl md:text-2xl text-white/90 mb-16"
           >
             I'm a{" "}
-            <motion.span
-              animate={{ opacity: [1, 0.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="font-semibold"
-            >
-              Seller
-            </motion.span>
+            <span className="font-semibold text-orange-500 inline-block min-w-[80px] text-left">
+              {profession}
+              <span className="animate-pulse">|</span>
+            </span>
           </motion.div>
 
           {/* Arrow Down */}
@@ -68,11 +111,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2"
+            className="absolute bottom-12 left-1/2 -translate-x-1/2 cursor-pointer"
+            onClick={scrollToNextSection}
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
+              className="bg-white/10 backdrop-blur-sm p-4 rounded-full hover:bg-white/20 transition-colors"
             >
               <ChevronDown className="w-8 h-8 text-white" />
             </motion.div>
