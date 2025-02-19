@@ -46,13 +46,13 @@ const ParticleBackground = () => {
         if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
 
-        // Draw particle
+        // Draw particle (increased size from 2 to 4)
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.arc(particle.x, particle.y, 4, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'; // Increased opacity from 0.3 to 0.5
         ctx.fill();
 
-        // Draw lines to nearby particles
+        // Draw lines to nearby particles (increased distance from 100 to 200)
         particlePositions.current.forEach((otherParticle, j) => {
           if (i === j) return;
           
@@ -60,12 +60,12 @@ const ParticleBackground = () => {
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 100) {
+          if (distance < 200) { // Increased connection distance
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 * (1 - distance / 100)})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.3 * (1 - distance / 200)})`; // Increased line opacity from 0.2 to 0.3
+            ctx.lineWidth = 1; // Increased line width from 0.5 to 1
             ctx.stroke();
           }
         });
