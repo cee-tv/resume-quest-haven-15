@@ -97,7 +97,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-xl md:text-2xl text-white/90 mb-16"
+            className="text-xl md:text-2xl text-white/90 mb-8"
           >
             I'm a{" "}
             <span className="font-semibold text-orange-500 inline-block min-w-[80px] text-left">
@@ -111,7 +111,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 cursor-pointer"
+            className="cursor-pointer mt-4"
             onClick={scrollToNextSection}
           >
             <motion.div
