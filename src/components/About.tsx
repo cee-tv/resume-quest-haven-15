@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -99,14 +98,6 @@ const About = () => {
                 <h1 className="text-6xl font-bold mb-2">ABOUT ME</h1>
                 <h2 className="text-lg text-gray-600">Main informations about me</h2>
               </div>
-            </div>
-
-            <div className="w-48 h-48 mx-auto mb-8 overflow-hidden rounded-full border-4 border-orange-500">
-              <img 
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-bBBunvDBHMj7THszHcCEtaTodjREHS2R-QitBabPqEmhYG6D5ZJAwmPk&s=10"
-                alt="Jayce Il"
-                className="w-full h-full object-cover"
-              />
             </div>
 
             <h1 className="text-xl font-bold mb-2 text-left">
