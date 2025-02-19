@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -50,9 +51,23 @@ const About = () => {
     { label: "Degree:", value: "Master" },
     { label: "Website:", value: "www.mywebsite.com" },
     { label: "Mail:", value: "mymail@gmail.com" },
-    { label: "Phone:", value: "+77 022 177 05 05" },
+    { label: "Phone:", value: "+770221770505" }, // Removed spaces for proper tel: link
     { label: "Twitter:", value: "@myusername" },
   ];
+
+  const handleDownloadCV = () => {
+    // Since we don't have a real CV file, we'll create a dummy download
+    const dummyCV = "https://example.com/JayceIl_CV.pdf";
+    window.open(dummyCV, '_blank');
+  };
+
+  const handleEmail = () => {
+    window.location.href = 'mailto:mymail@gmail.com?subject=Inquiry for Jayce Il&body=Hello Jayce,';
+  };
+
+  const handleSMS = () => {
+    window.location.href = 'sms:+770221770505';
+  };
 
   const skills = [
     { name: "Wordpress", years: 5, percentage: 95 },
@@ -96,6 +111,7 @@ const About = () => {
                 <span className="animate-pulse">|</span>
               </span>
             </h1>
+
             <p className="text-gray-700 mb-8 max-w-3xl mx-auto">
               Hi! My name is <span className="text-orange-500">Jayce Il</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
             </p>
@@ -110,11 +126,23 @@ const About = () => {
             </div>
 
             <div className="flex gap-4 justify-center">
-              <button className="bg-orange-500 text-white px-8 py-3 rounded hover:bg-orange-600 transition-colors">
+              <button 
+                onClick={handleDownloadCV}
+                className="bg-orange-500 text-white px-8 py-3 rounded hover:bg-orange-600 transition-colors"
+              >
                 Download CV
               </button>
-              <button className="bg-orange-500 text-white px-8 py-3 rounded hover:bg-orange-600 transition-colors">
-                Send Message
+              <button 
+                onClick={handleEmail}
+                className="bg-orange-500 text-white px-8 py-3 rounded hover:bg-orange-600 transition-colors"
+              >
+                Email Me
+              </button>
+              <button 
+                onClick={handleSMS}
+                className="bg-orange-500 text-white px-8 py-3 rounded hover:bg-orange-600 transition-colors"
+              >
+                Send SMS
               </button>
             </div>
           </div>
