@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
@@ -53,9 +52,9 @@ const ParticleBackground = () => {
         particle.alpha += Math.sin(frameCount.current * 0.1) * 0.02;
         particle.alpha = Math.max(0.3, Math.min(1, particle.alpha));
 
-        // Draw particle with blinking effect
+        // Draw particle with blinking effect - changed radius from 6 to 3
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, 6, 0, Math.PI * 2);
+        ctx.arc(particle.x, particle.y, 3, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${particle.alpha})`;
         ctx.fill();
 
