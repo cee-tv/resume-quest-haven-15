@@ -39,8 +39,8 @@ const About = () => {
     // Animate each skill percentage gradually
     skills.forEach((skill, index) => {
       let startTime = Date.now();
-      const duration = 2000; // 2 seconds animation
-      const startDelay = index * 200; // Stagger start of each skill
+      const duration = 4000; // 4 seconds animation
+      const startDelay = index * 300; // Increased delay between skills
 
       setTimeout(() => {
         const timer = setInterval(() => {
@@ -195,14 +195,14 @@ const About = () => {
                         className="text-orange-500 font-bold"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5 }}
+                        transition={{ duration: 1 }}
                       >
                         {skillPercentages[skill.name]}%
                       </motion.span>
                     </div>
                     <Progress 
                       value={skillPercentages[skill.name]} 
-                      className="h-2 transition-all duration-300 ease-out"
+                      className="h-2 transition-all duration-500 ease-out"
                     />
                   </motion.div>
                 ))}
