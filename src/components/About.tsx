@@ -124,8 +124,8 @@ const About = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto space-y-20"
         >
-          <div className="text-center">
-            <div className="flex items-center mb-4">
+          <div>
+            <div className="flex items-start mb-8">
               <motion.div
                 initial={{ height: 0 }}
                 whileInView={{ height: "120px" }}
@@ -133,15 +133,14 @@ const About = () => {
                 viewport={{ once: true }}
                 className="w-2 bg-orange-500 mr-6"
               ></motion.div>
-              <div className="text-left">
-                <h1 className="text-2xl font-bold mb-2">ABOUT ME</h1>
-                <h2 className="text-lg text-gray-600">
-                  I'm a {" "}
-                  <span className="text-orange-500 inline-block min-w-[200px] text-left">
+              <div>
+                <h1 className="text-2xl font-bold mb-4">ABOUT ME</h1>
+                <div className="text-lg text-gray-600">
+                  <span className="text-orange-500 block min-w-[300px] h-8">
                     {profession}
-                    <span className="animate-pulse">|</span>
+                    <span className="animate-pulse ml-1">|</span>
                   </span>
-                </h2>
+                </div>
               </div>
             </div>
 
@@ -153,12 +152,8 @@ const About = () => {
               />
             </div>
 
-            <h1 className="text-xl font-bold mb-2 text-center">
-              I'm Jayce Il and I'm a{" "}
-              <span className="text-orange-500 inline-block min-w-[200px]">
-                {profession}
-                <span className="animate-pulse">|</span>
-              </span>
+            <h1 className="text-xl font-bold mb-2">
+              I'm Jayce Il
             </h1>
 
             <p className="text-gray-700 mb-8 text-left">
