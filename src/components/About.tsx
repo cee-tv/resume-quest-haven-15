@@ -158,9 +158,9 @@ const About = () => {
                 />
               </div>
 
-              <div className="text-left mb-2 flex flex-wrap items-center gap-x-2">
+              <div className="text-left mb-2 flex items-baseline gap-x-1">
                 <span className="text-lg font-bold whitespace-nowrap">I'm Jayce Lumbria and</span>
-                <span className="text-orange-500 font-bold text-lg md:text-2xl font-display">
+                <span className="text-orange-500 font-bold text-lg font-display">
                   {profession}
                   <span className="animate-pulse">|</span>
                 </span>
@@ -195,9 +195,9 @@ const About = () => {
 
               {/* Right Column - Personal Information */}
               <div className="text-left">
-                <div className="mb-6 flex flex-wrap items-center gap-x-2">
-                  <span className="text-xl font-bold whitespace-nowrap">I'm Jayce Lumbria and</span>
-                  <span className="text-orange-500 font-bold text-xl md:text-3xl font-display">
+                <div className="mb-6 flex items-baseline gap-x-1">
+                  <span className="text-lg font-bold whitespace-nowrap">I'm Jayce Lumbria and</span>
+                  <span className="text-orange-500 font-bold text-lg font-display">
                     {profession}
                     <span className="animate-pulse">|</span>
                   </span>
