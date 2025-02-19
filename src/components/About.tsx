@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -166,6 +165,13 @@ const About = () => {
                 </span>
               </div>
 
+              <div className="md:hidden">
+                <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
+                <p className="text-gray-700 text-left">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
+                </p>
+              </div>
+
               <p className="text-gray-700 text-left">
                 Hi! My name is <span className="text-orange-500">Jayce Il</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
               </p>
@@ -177,13 +183,6 @@ const About = () => {
                     <span className="text-gray-600">{info.value}</span>
                   </div>
                 ))}
-              </div>
-
-              <div className="block md:hidden">
-                <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
-                <p className="text-gray-700 text-left">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
-                </p>
               </div>
 
               <div className="space-y-8">
