@@ -139,11 +139,12 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/90 to-blue-900/80 z-0">
+      <div className="absolute inset-0 bg-[#D3E4FD]/90 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-500/20 to-blue-600/30" />
         <img 
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLAX4lMpz2ywWkvREZvPN007kyzZn1BfZXEv0rsfJWb2aYy52tqrUxSzY&s=10"
           alt="Background"
-          className="w-full h-full object-cover mix-blend-overlay opacity-80"
+          className="w-full h-full object-cover mix-blend-overlay opacity-60"
         />
         <ParticleBackground />
       </div>
