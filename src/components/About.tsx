@@ -90,7 +90,7 @@ const About = () => {
               />
             </div>
 
-            <h1 className="text-xl font-bold mb-2">
+            <h1 className="text-xl font-bold mb-2 text-left">
               I'm Jayce Il and I'm a{" "}
               <span className="text-orange-500 inline-block min-w-[200px]">
                 {profession}
