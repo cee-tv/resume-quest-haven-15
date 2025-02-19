@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -25,7 +25,7 @@ const Contact = () => {
     try {
       await emailjs.send(
         'service_408p602',
-        'template_fidin5j',     // Updated template ID
+        'template_fidin5j',     
         {
           name: formData.name,           
           email: formData.email,         
@@ -58,8 +58,15 @@ const Contact = () => {
     }));
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-white relative">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -174,7 +181,24 @@ const Contact = () => {
             </form>
           </motion.div>
         </div>
+
+        {/* Copyright Section */}
+        <div className="text-center mt-16 text-gray-600">
+          <p>© Copyright 2025. All Rights are Reserved.</p>
+        </div>
       </div>
+
+      {/* Go to Top Button */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        onClick={scrollToTop}
+        className="fixed bottom-8 right-8 bg-orange-500 text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition-colors z-50"
+        aria-label="Go to top"
+      >
+        <ArrowUp className="w-6 h-6" />
+      </motion.button>
     </section>
   );
 };
