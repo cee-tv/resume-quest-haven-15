@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -42,13 +41,6 @@ const About = () => {
     }
   };
 
-  const skills = [
-    { name: "Wordpress", years: 5, percentage: 95 },
-    { name: "CSS", years: 3, percentage: 85 },
-    { name: "HTML", years: 4, percentage: 75 },
-    { name: "After Effect", years: 6, percentage: 90 },
-  ];
-
   const personalInfo = [
     { label: "Birthday:", value: "01.07.1990" },
     { label: "Age:", value: "28" },
@@ -60,6 +52,13 @@ const About = () => {
     { label: "Mail:", value: "mymail@gmail.com" },
     { label: "Phone:", value: "+77 022 177 05 05" },
     { label: "Twitter:", value: "@myusername" },
+  ];
+
+  const skills = [
+    { name: "Wordpress", years: 5, percentage: 95 },
+    { name: "CSS", years: 3, percentage: 85 },
+    { name: "HTML", years: 4, percentage: 75 },
+    { name: "After Effect", years: 6, percentage: 90 },
   ];
 
   return (
@@ -83,7 +82,7 @@ const About = () => {
               />
             </div>
 
-            <h1 className="text-5xl font-bold mb-2">
+            <h1 className="text-3xl font-bold mb-2">
               I'm Alan Michaelis and I'm a{" "}
               <span className="text-orange-500 inline-block min-w-[80px]">
                 {profession}
