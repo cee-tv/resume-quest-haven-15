@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -15,8 +16,8 @@ const About = () => {
     "After Effect": 0
   });
   const professions = ["Social Media Boosting", "Social Media Seller"];
-  const period = 3000;
-  const [delta, setDelta] = useState(300);
+  const period = 2000;
+  const [delta, setDelta] = useState(200);
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -27,6 +28,7 @@ const About = () => {
   }, [profession, delta, isDeleting]);
 
   useEffect(() => {
+    // Start with 0 for all skills
     setSkillPercentages({
       Wordpress: 0,
       CSS: 0,
@@ -34,10 +36,11 @@ const About = () => {
       "After Effect": 0
     });
 
+    // Animate each skill percentage gradually
     skills.forEach((skill, index) => {
       let startTime = Date.now();
-      const duration = 4000;
-      const startDelay = index * 300;
+      const duration = 4000; // 4 seconds animation
+      const startDelay = index * 300; // Increased delay between skills
 
       setTimeout(() => {
         const timer = setInterval(() => {
@@ -69,7 +72,7 @@ const About = () => {
     setProfession(updatedText);
 
     if (isDeleting) {
-      setDelta(prevDelta => prevDelta / 1.5);
+      setDelta(prevDelta => prevDelta / 2);
     }
 
     if (!isDeleting && updatedText === fullText) {
@@ -78,7 +81,7 @@ const About = () => {
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setDelta(300);
+      setDelta(200);
     }
   };
 
@@ -124,8 +127,8 @@ const About = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto space-y-20"
         >
-          <div>
-            <div className="flex items-start mb-8">
+          <div className="text-center">
+            <div className="flex items-center mb-4">
               <motion.div
                 initial={{ height: 0 }}
                 whileInView={{ height: "120px" }}
@@ -133,14 +136,9 @@ const About = () => {
                 viewport={{ once: true }}
                 className="w-2 bg-orange-500 mr-6"
               ></motion.div>
-              <div>
-                <h1 className="text-2xl font-bold mb-4">ABOUT ME</h1>
-                <div className="text-lg text-gray-600">
-                  <span className="text-orange-500 block min-w-[300px] h-8">
-                    {profession}
-                    <span className="animate-pulse ml-1">|</span>
-                  </span>
-                </div>
+              <div className="text-left">
+                <h1 className="text-2xl font-bold mb-2">ABOUT ME</h1>
+                <h2 className="text-lg text-gray-600">Main informations about me</h2>
               </div>
             </div>
 
@@ -152,8 +150,12 @@ const About = () => {
               />
             </div>
 
-            <h1 className="text-xl font-bold mb-2">
-              I'm Jayce Il
+            <h1 className="text-xl font-bold mb-2 text-center">
+              I'm Jayce Il and I'm a{" "}
+              <span className="text-orange-500 inline-block min-w-[200px]">
+                {profession}
+                <span className="animate-pulse">|</span>
+              </span>
             </h1>
 
             <p className="text-gray-700 mb-8 text-left">
