@@ -7,7 +7,7 @@ const About = () => {
   const [profession, setProfession] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
-  const professions = ["social media seller", "social media boost sale"];
+  const professions = ["Social Media Boosting", "Social Media Seller"];
   const period = 2000;
   const [delta, setDelta] = useState(200);
 
@@ -74,31 +74,31 @@ const About = () => {
         >
           {/* Personal Information Section */}
           <div className="text-center">
-            <div className="flex items-center justify-center mb-4">
+            <div className="flex items-center mb-4">
               <div className="w-1 bg-orange-500 h-12 mr-4"></div>
               <h1 className="text-5xl font-bold">ABOUT ME</h1>
             </div>
             
-            <h2 className="text-lg text-gray-600 mb-8">Main informations about me</h2>
+            <h2 className="text-lg text-gray-600 mb-8 text-left">Main informations about me</h2>
 
             {/* Square Image */}
             <div className="w-48 h-48 mx-auto mb-8 overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-                alt="Alan Michaelis"
+                alt="Jayce Il"
                 className="w-full h-full object-cover"
               />
             </div>
 
-            <h1 className="text-2xl font-bold mb-2">
-              I'm Alan Michaelis and I'm a{" "}
+            <h1 className="text-xl font-bold mb-2">
+              I'm Jayce Il and I'm a{" "}
               <span className="text-orange-500 inline-block min-w-[200px]">
                 {profession}
                 <span className="animate-pulse">|</span>
               </span>
             </h1>
             <p className="text-gray-700 mb-8 max-w-3xl mx-auto">
-              Hi! My name is <span className="text-orange-500">Alan Michaelis</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
+              Hi! My name is <span className="text-orange-500">Jayce Il</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
             </p>
 
             <div className="grid grid-cols-2 gap-x-8 gap-y-4 text-left max-w-2xl mx-auto mb-8">
