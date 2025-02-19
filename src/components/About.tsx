@@ -1,7 +1,28 @@
 
 import { motion } from "framer-motion";
+import { Progress } from "@/components/ui/progress";
 
 const About = () => {
+  const skills = [
+    { name: "Wordpress", years: 5, percentage: 95 },
+    { name: "CSS", years: 3, percentage: 85 },
+    { name: "HTML", years: 4, percentage: 75 },
+    { name: "After Effect", years: 6, percentage: 90 },
+  ];
+
+  const personalInfo = [
+    { label: "Birthday:", value: "01.07.1990" },
+    { label: "Age:", value: "28" },
+    { label: "City:", value: "New York, USA" },
+    { label: "Interests:", value: "Soccer, UFC" },
+    { label: "Study:", value: "Chicago University" },
+    { label: "Degree:", value: "Master" },
+    { label: "Website:", value: "www.mywebsite.com" },
+    { label: "Mail:", value: "mymail@gmail.com" },
+    { label: "Phone:", value: "+77 022 177 05 05" },
+    { label: "Twitter:", value: "@myusername" },
+  ];
+
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -10,52 +31,55 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto space-y-20"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-8 text-center">
-            About Me
-          </h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <div className="aspect-square rounded-2xl overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-                  alt="Profile"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <p className="text-lg text-gray-600">
-                With over 5 years of experience in digital design and development, I help businesses
-                create impactful online presence through beautiful, functional websites.
-              </p>
-              <p className="text-lg text-gray-600">
-                My approach combines creative design thinking with technical expertise to deliver
-                solutions that not only look great but also perform exceptionally.
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <div>
-                  <h3 className="font-bold text-gray-900 text-xl mb-2">50+</h3>
-                  <p className="text-gray-600">Projects Completed</p>
+          {/* Personal Information Section */}
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-2">
+              I'm Alan Michaelis and <span className="text-orange-500">Web Develop</span>
+            </h1>
+            <p className="text-gray-700 mb-8 max-w-3xl mx-auto">
+              Hi! My name is <span className="text-orange-500">Alan Michaelis</span>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto mb-8">
+              {personalInfo.map((info, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <span className="font-bold min-w-[100px]">{info.label}</span>
+                  <span className="text-gray-600">{info.value}</span>
                 </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 text-xl mb-2">5+</h3>
-                  <p className="text-gray-600">Years Experience</p>
+              ))}
+            </div>
+
+            <div className="flex gap-4 justify-center">
+              <button className="bg-orange-500 text-white px-8 py-3 rounded hover:bg-orange-600 transition-colors">
+                Download CV
+              </button>
+              <button className="bg-orange-500 text-white px-8 py-3 rounded hover:bg-orange-600 transition-colors">
+                Send Message
+              </button>
+            </div>
+          </div>
+
+          {/* Skills Section */}
+          <div>
+            <h2 className="text-4xl font-bold mb-8 text-center">Some About my Abilities</h2>
+            <p className="text-gray-700 mb-12 text-center">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
+            </p>
+            <div className="space-y-6 max-w-3xl mx-auto">
+              {skills.map((skill, index) => (
+                <div key={index} className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-lg font-semibold">
+                      {skill.name} - {skill.years} years of experience
+                    </span>
+                    <span className="font-bold">{skill.percentage}%</span>
+                  </div>
+                  <Progress value={skill.percentage} className="h-3" />
                 </div>
-              </div>
-            </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
