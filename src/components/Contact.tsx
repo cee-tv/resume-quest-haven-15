@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -24,8 +23,8 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'service_408p602',
+        'template_e2beuee',
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -33,7 +32,7 @@ const Contact = () => {
           message: formData.message,
           to_email: 'josephbundok@gmail.com',
         },
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        'uA_uylHshJmE72iKH'
       );
 
       toast.success("Message sent successfully!");
@@ -85,7 +84,6 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Info - Left side on desktop, Top on mobile */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -116,7 +114,6 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Contact Form - Right side on desktop, Bottom on mobile */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
