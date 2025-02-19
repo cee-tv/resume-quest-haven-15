@@ -15,7 +15,6 @@ const ParticleBackground = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size
     const setCanvasSize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -23,12 +22,11 @@ const ParticleBackground = () => {
     setCanvasSize();
     window.addEventListener('resize', setCanvasSize);
 
-    // Initialize particles with alpha value for blinking
     particlePositions.current = particles.map(() => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 2, // Increased velocity
-      vy: (Math.random() - 0.5) * 2, // Increased velocity
+      vx: (Math.random() - 0.5) * 2,
+      vy: (Math.random() - 0.5) * 2,
       alpha: Math.random()
     }));
 
@@ -38,27 +36,21 @@ const ParticleBackground = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       frameCount.current++;
       
-      // Update and draw particles
       particlePositions.current.forEach((particle, i) => {
-        // Update position with faster movement
         particle.x += particle.vx;
         particle.y += particle.vy;
 
-        // Bounce off walls
         if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
 
-        // Update particle alpha for blinking effect
         particle.alpha += Math.sin(frameCount.current * 0.1) * 0.02;
         particle.alpha = Math.max(0.3, Math.min(1, particle.alpha));
 
-        // Draw particle with blinking effect - changed radius from 6 to 3
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, 3, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${particle.alpha})`;
         ctx.fill();
 
-        // Draw lines to nearby particles with dynamic opacity
         particlePositions.current.forEach((otherParticle, j) => {
           if (i === j) return;
           
@@ -148,7 +140,6 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Image */}
       <div className="absolute inset-0">
         <img 
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLAX4lMpz2ywWkvREZvPN007kyzZn1BfZXEv0rsfJWb2aYy52tqrUxSzY&s=10"
@@ -165,7 +156,6 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center"
         >
-          {/* Profile Image */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -179,7 +169,6 @@ const Hero = () => {
             />
           </motion.div>
 
-          {/* Name */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -190,21 +179,19 @@ const Hero = () => {
             <span className="text-orange-500">MICHAELIS</span>
           </motion.h1>
 
-          {/* Profession with Typing Effect */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-xl md:text-2xl text-white/90 mb-8"
+            className="text-xl md:text-2xl text-white/90 mb-8 font-display"
           >
             I'm a{" "}
-            <span className="font-semibold text-orange-500 inline-block min-w-[80px] text-left">
+            <span className="font-bold text-white inline-block min-w-[80px] text-left">
               {profession}
               <span className="animate-pulse">|</span>
             </span>
           </motion.div>
 
-          {/* Arrow Down */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}

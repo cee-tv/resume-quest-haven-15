@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -154,7 +153,7 @@ const About = () => {
 
               <div className="text-left mb-2">
                 <span className="text-xl font-bold">I'm Jayce Il and I'm a </span>
-                <span className="text-orange-500 inline-block min-w-[200px]">
+                <span className="text-orange-500 font-bold inline-block min-w-[200px] font-display">
                   {profession}
                   <span className="animate-pulse">|</span>
                 </span>
@@ -191,7 +190,7 @@ const About = () => {
               <div className="text-left">
                 <div className="mb-6">
                   <span className="text-xl font-bold">I'm Jayce Il and I'm a </span>
-                  <span className="text-orange-500 inline-block min-w-[200px]">
+                  <span className="text-orange-500 font-bold inline-block min-w-[200px] font-display">
                     {profession}
                     <span className="animate-pulse">|</span>
                   </span>
