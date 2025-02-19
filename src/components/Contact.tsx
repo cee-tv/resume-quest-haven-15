@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -66,7 +65,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white relative">
+    <motion.section 
+      id="contact" 
+      className="py-20 bg-white relative"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -182,13 +188,11 @@ const Contact = () => {
           </motion.div>
         </div>
 
-        {/* Copyright Section */}
         <div className="text-center mt-16 text-gray-600">
           <p>© Copyright 2025. All Rights are Reserved.</p>
         </div>
       </div>
 
-      {/* Go to Top Button */}
       <motion.button
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -199,7 +203,7 @@ const Contact = () => {
       >
         <ArrowUp className="w-6 h-6" />
       </motion.button>
-    </section>
+    </motion.section>
   );
 };
 

@@ -24,7 +24,14 @@ const projects = [
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="py-20 bg-gray-50">
+    <motion.section 
+      id="portfolio" 
+      className="py-20 bg-gray-50"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,7 +62,7 @@ const Portfolio = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <div className="h-48 overflow-hidden">
@@ -83,7 +90,7 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

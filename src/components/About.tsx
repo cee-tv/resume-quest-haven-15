@@ -1,4 +1,3 @@
-
 import { motion, useInView } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect, useRef } from "react";
@@ -31,18 +30,16 @@ const About = () => {
 
   useEffect(() => {
     if (isInView) {
-      // Reset all skills to 0
       setSkillPercentages({
         BOOSTER: 0,
         SELLER: 0,
         DEVELOPER: 0,
       });
 
-      // Animate each skill percentage gradually
       skills.forEach((skill, index) => {
         let startTime = Date.now();
-        const duration = 4000; // 4 seconds animation
-        const startDelay = index * 300; // Increased delay between skills
+        const duration = 4000;
+        const startDelay = index * 300;
 
         setTimeout(() => {
           const timer = setInterval(() => {
@@ -120,7 +117,14 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <motion.section 
+      id="about" 
+      className="py-20 bg-white"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -254,7 +258,7 @@ const About = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
