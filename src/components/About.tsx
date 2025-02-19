@@ -9,9 +9,9 @@ const About = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [skillPercentages, setSkillPercentages] = useState({
-    Wordpress: 0,
-    CSS: 0,
-    HTML: 0,
+    BOOSTER: 0,
+    SELLER: 0,
+    DEVELOPER: 0,
     "After Effect": 0
   });
   const professions = ["Social Media Boosting", "Social Media Seller"];
@@ -33,9 +33,9 @@ const About = () => {
     if (isInView) {
       // Reset all skills to 0
       setSkillPercentages({
-        Wordpress: 0,
-        CSS: 0,
-        HTML: 0,
+        BOOSTER: 0,
+        SELLER: 0,
+        DEVELOPER: 0,
         "After Effect": 0
       });
 
