@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
@@ -51,7 +52,7 @@ const About = () => {
     { label: "Website:", value: "www.mywebsite.com" },
     { label: "Mail:", value: "mymail@gmail.com" },
     { label: "Phone:", value: "+770221770505" },
-    { label: "Facebook Pages:", value: "https://www.facebook.com/100090600411704" },
+    { label: "Facebook Pages:", value: "@mrjayceee" },
   ];
 
   const handleFacebookMessage = () => {
