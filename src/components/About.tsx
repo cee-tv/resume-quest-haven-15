@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Mail, MessageSquare } from "lucide-react";
 
@@ -17,6 +17,9 @@ const About = () => {
   const professions = ["Social Media Boosting", "Social Media Seller"];
   const period = 2000;
   const [delta, setDelta] = useState(200);
+  
+  const skillsRef = useRef(null);
+  const isInView = useInView(skillsRef, { once: false });
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -27,39 +30,41 @@ const About = () => {
   }, [profession, delta, isDeleting]);
 
   useEffect(() => {
-    // Start with 0 for all skills
-    setSkillPercentages({
-      Wordpress: 0,
-      CSS: 0,
-      HTML: 0,
-      "After Effect": 0
-    });
+    if (isInView) {
+      // Reset all skills to 0
+      setSkillPercentages({
+        Wordpress: 0,
+        CSS: 0,
+        HTML: 0,
+        "After Effect": 0
+      });
 
-    // Animate each skill percentage gradually
-    skills.forEach((skill, index) => {
-      let startTime = Date.now();
-      const duration = 4000; // 4 seconds animation
-      const startDelay = index * 300; // Increased delay between skills
+      // Animate each skill percentage gradually
+      skills.forEach((skill, index) => {
+        let startTime = Date.now();
+        const duration = 4000; // 4 seconds animation
+        const startDelay = index * 300; // Increased delay between skills
 
-      setTimeout(() => {
-        const timer = setInterval(() => {
-          const elapsed = Date.now() - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          
-          setSkillPercentages(prev => ({
-            ...prev,
-            [skill.name]: Math.round(progress * skill.percentage)
-          }));
+        setTimeout(() => {
+          const timer = setInterval(() => {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            setSkillPercentages(prev => ({
+              ...prev,
+              [skill.name]: Math.round(progress * skill.percentage)
+            }));
 
-          if (progress >= 1) {
-            clearInterval(timer);
-          }
-        }, 20);
+            if (progress >= 1) {
+              clearInterval(timer);
+            }
+          }, 20);
 
-        return () => clearInterval(timer);
-      }, startDelay);
-    });
-  }, []);
+          return () => clearInterval(timer);
+        }, startDelay);
+      });
+    }
+  }, [isInView]); // Now depends on isInView
 
   const tick = () => {
     let i = loopNum % professions.length;
@@ -211,7 +216,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="mt-12">
+            <div className="mt-12" ref={skillsRef}>
               <h2 className="text-2xl font-bold mb-6 text-left">Some About my Abilities</h2>
               <p className="text-gray-700 mb-8 text-left">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry's standard dummy text since. Lorem Ipsum is simply.
@@ -224,7 +229,7 @@ const About = () => {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                   >
                     <div className="flex justify-between mb-2">
                       <div className="flex items-center gap-2">
